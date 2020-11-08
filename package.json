@@ -1,0 +1,11 @@
+{
+  "name": "relay3r-jobs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/relay3r-network/relay3r-jobs",
+  "author": "akshaynexus <akshaycm@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ethers": "^5.0.19"
+  }
+}
