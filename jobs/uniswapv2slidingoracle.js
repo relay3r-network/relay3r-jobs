@@ -47,4 +47,4 @@ setInterval(async function () {
   if (!jobTXPending) {
     await main();
   }
-}, 30000);
+}, 1400000);
