@@ -4,7 +4,7 @@ const ethers = require("ethers");
 //Import config and abis
 const wallet = require("./config/wallet.js");
 const provider = require("./config/provider.js");
-const { address, abi } = require("./abis/SushiswapV2Keep3r.js");
+const { address, abi } = require("./abis/sushiswapv2keep3r.js");
 const { getCurrentGasPrices } = require("../helper/gasGetter");
 
 //Initialize account and abi
