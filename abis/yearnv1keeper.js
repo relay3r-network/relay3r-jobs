@@ -1,5 +1,5 @@
 const config = {
-  address: "0xe7F4ab593aeC81EcA754Da1B3B7cE0C42a13Ec0C",
+  address: "0x9929fda713F40b385D9Af169c4441a18986D687B",
   abi: [
     "function BASE (  ) external view returns ( uint256 )",
     "function KP3R (  ) external view returns ( address )",

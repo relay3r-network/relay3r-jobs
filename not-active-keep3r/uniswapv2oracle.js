@@ -2,9 +2,9 @@
 const ethers = require("ethers");
 
 //Import config and abis
-const wallet = require("./config/wallet.js");
-const provider = require("./config/provider.js");
-const { address, abi } = require("./abis/uniswapv2oracle.js");
+const wallet = require("./config/wallet.js.js");
+const provider = require("./config/provider.js.js");
+const { address, abi } = require("./abis/uniswapv2oracle.js.js");
 const { getCurrentGasPrices } = require("../helper/gasGetter");
 
 //Initialize account and abi
