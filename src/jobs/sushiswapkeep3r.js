@@ -33,7 +33,6 @@ async function main() {
       jobTXPending = true;
       const tx = await SushiswapV2Keep3r.work({
         gasPrice: gas * 1e9,
-        gasLimit: 100000,
       });
       log(`Tx hash: ${tx.hash}`);
       const receipt = await tx.wait();
