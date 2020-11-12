@@ -21,6 +21,10 @@ async function UpdateGas() {
   gas = gasx.high + 7; //Instant execution expected
 }
 
+function log(msg) {
+  console.log("[SushiSwapKeep3r] " + msg)
+}
+
 async function main() {
   try {
     workable = await SushiswapV2Keep3r.workable();
@@ -31,17 +35,19 @@ async function main() {
         gasPrice: gas * 1e9,
         gasLimit: 100000,
       });
-      console.log(`Transaction hash: ${tx.hash}`);
+      log(`Tx hash: ${tx.hash}`);
       const receipt = await tx.wait();
-      console.log(`Transaction confirmed in block ${receipt.blockNumber}`);
-      console.log(`Gas used: ${receipt.gasUsed.toString()}`);
+      log(`Transaction confirmed in block ${receipt.blockNumber}`);
+      log(`Gas used: ${receipt.gasUsed.toString()}`);
       jobTXPending = false;
     }
   } catch (error) {
     jobTXPending = false;
-    console.log(error.reason);
+    log(error.reason);
   }
 }
+
+
 
 setInterval(async function () {
   if (!jobTXPending) {

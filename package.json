@@ -5,6 +5,9 @@
   "repository": "https://github.com/relay3r-network/relay3r-jobs",
   "author": "akshaynexus <akshaycm@hotmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js"
+  },
   "dependencies": {
     "axios": "^0.21.0",
     "dotenv": "^8.2.0",

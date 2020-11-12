@@ -1,0 +1,7 @@
+version: "3.3"
+services:
+  relayer:
+    build: .
+    restart: always
+    volumes:
+      - ".env:/relayer/.env"
