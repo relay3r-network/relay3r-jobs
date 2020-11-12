@@ -2,8 +2,8 @@
 const ethers = require("ethers");
 
 //Import config and abis
-const wallet = require("./config/wallet.js");
-const provider = require("./config/provider.js");
+const wallet = require("../config/wallet.js");
+const provider = require("../config/provider.js");
 const { address, abi } = require("./abis/unitraderelay3r.js");
 const { getCurrentGasPrices } = require("../helper/gasGetter");
 
