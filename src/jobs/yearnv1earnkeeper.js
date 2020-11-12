@@ -32,8 +32,7 @@ async function main() {
       await UpdateGas();
       jobTXPending = true;
       const tx = await YearnV1EarnKeeper.work({
-        gasPrice: gas * 1e9,
-        gasLimit: 100000,
+        gasPrice: gas * 1e9
       });
       log(`Transaction hash: ${tx.hash}`);
       const receipt = await tx.wait();

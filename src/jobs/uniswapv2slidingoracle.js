@@ -33,7 +33,6 @@ async function main() {
       jobTXPending = true;
       const tx = await UniswapV2SlidingOracle.work({
         gasPrice: gas * 1e9,
-        gasLimit: 100000,
       });
       log(`Transaction hash: ${tx.hash}`);
       const receipt = await tx.wait();
