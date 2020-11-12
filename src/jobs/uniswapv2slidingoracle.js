@@ -2,9 +2,9 @@
 const ethers = require("ethers");
 
 //Import config and abis
-const wallet = require("./config/wallet.js");
-const provider = require("./config/provider.js");
-const { address, abi } = require("./abis/uniswapv2slidingoracle.js");
+const wallet = require("../config/wallet.js");
+const provider = require("../config/provider.js");
+const { address, abi } = require("../abis/sushiswapv2keep3r.js");
 const { getCurrentGasPrices } = require("../helper/gasGetter");
 
 //Initialize account and abi
@@ -21,6 +21,10 @@ async function UpdateGas() {
   gas = gasx.high + 7; //Instant execution expected
 }
 
+function log(msg) {
+  console.log("[Uniswapv2SlidingOracle] " + msg)
+}
+
 async function main() {
   try {
     workable = await UniswapV2SlidingOracle.workable();
@@ -31,15 +35,15 @@ async function main() {
         gasPrice: gas * 1e9,
         gasLimit: 100000,
       });
-      console.log(`Transaction hash: ${tx.hash}`);
+      log(`Transaction hash: ${tx.hash}`);
       const receipt = await tx.wait();
-      console.log(`Transaction confirmed in block ${receipt.blockNumber}`);
-      console.log(`Gas used: ${receipt.gasUsed.toString()}`);
+      log(`Transaction confirmed in block ${receipt.blockNumber}`);
+      log(`Gas used: ${receipt.gasUsed.toString()}`);
       jobTXPending = false;
     }
   } catch (error) {
     jobTXPending = false;
-    console.log(error.reason);
+    log(error.reason);
   }
 }
 

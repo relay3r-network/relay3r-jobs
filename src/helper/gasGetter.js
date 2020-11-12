@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-export const getCurrentGasPrices = async () => {
+exports.getCurrentGasPrices = async () => {
   let response = await axios.get(
     "https://ethgasstation.info/json/ethgasAPI.json"
   );

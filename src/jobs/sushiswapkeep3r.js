@@ -2,14 +2,14 @@
 const ethers = require("ethers");
 
 //Import config and abis
-const wallet = require("./config/wallet.js.js");
-const provider = require("./config/provider.js.js");
-const { address, abi } = require("./abis/uniswapv2oracle.js.js");
+const wallet = require("../config/wallet.js");
+const provider = require("../config/provider.js");
+const { address, abi } = require("../abis/sushiswapv2keep3r.js");
 const { getCurrentGasPrices } = require("../helper/gasGetter");
 
 //Initialize account and abi
 const account = wallet.connect(provider);
-const UniswapV2Oracle = new ethers.Contract(address, abi, account);
+const SushiswapV2Keep3r = new ethers.Contract(address, abi, account);
 
 //Global vars for job exec
 let jobTXPending = false;
@@ -21,27 +21,33 @@ async function UpdateGas() {
   gas = gasx.high + 7; //Instant execution expected
 }
 
+function log(msg) {
+  console.log("[SushiSwapKeep3r] " + msg)
+}
+
 async function main() {
   try {
-    workable = await UniswapV2Oracle.updateable();
+    workable = await SushiswapV2Keep3r.workable();
     if (!jobTXPending && workable) {
       await UpdateGas();
       jobTXPending = true;
-      const tx = await UniswapV2Oracle.update({
+      const tx = await SushiswapV2Keep3r.work({
         gasPrice: gas * 1e9,
         gasLimit: 100000,
       });
-      console.log(`Transaction hash: ${tx.hash}`);
+      log(`Tx hash: ${tx.hash}`);
       const receipt = await tx.wait();
-      console.log(`Transaction confirmed in block ${receipt.blockNumber}`);
-      console.log(`Gas used: ${receipt.gasUsed.toString()}`);
+      log(`Transaction confirmed in block ${receipt.blockNumber}`);
+      log(`Gas used: ${receipt.gasUsed.toString()}`);
       jobTXPending = false;
     }
   } catch (error) {
     jobTXPending = false;
-    console.log(error.reason);
+    log(error.reason);
   }
 }
+
+
 
 setInterval(async function () {
   if (!jobTXPending) {

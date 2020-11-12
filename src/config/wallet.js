@@ -1,6 +1,6 @@
 const ethers = require("ethers");
-
-const mnemonic = "Put mnemonic here";
+const { env } = require("../env");
+const mnemonic = env.MNEMONIC;
 const wallet = ethers.Wallet.fromMnemonic(mnemonic);
 
 // console.log(`Mnemonic: ${wallet.mnemonic.phrase}`);

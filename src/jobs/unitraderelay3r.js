@@ -2,14 +2,14 @@
 const ethers = require("ethers");
 
 //Import config and abis
-const wallet = require("./config/wallet.js");
-const provider = require("./config/provider.js");
-const { address, abi } = require("./abis/yearnv1keeper.js");
+const wallet = require("../config/wallet.js");
+const provider = require("../config/provider.js");
+const { address, abi } = require("../abis/unitraderelay3r.js");
 const { getCurrentGasPrices } = require("../helper/gasGetter");
 
 //Initialize account and abi
 const account = wallet.connect(provider);
-const YearnV1EarnKeeper = new ethers.Contract(address, abi, account);
+const UnitradeRelay3r = new ethers.Contract(address, abi, account);
 
 //Global vars for job exec
 let jobTXPending = false;
@@ -21,25 +21,29 @@ async function UpdateGas() {
   gas = gasx.high + 7; //Instant execution expected
 }
 
+function log(msg) {
+  console.log("[UnitradeRelay3r] " + msg)
+}
+
 async function main() {
   try {
-    workable = await YearnV1EarnKeeper.workable();
+    workable = await UnitradeRelay3r.workable();
     if (!jobTXPending && workable) {
       await UpdateGas();
       jobTXPending = true;
-      const tx = await YearnV1EarnKeeper.work({
+      const tx = await UnitradeRelay3r.work({
         gasPrice: gas * 1e9,
         gasLimit: 100000,
       });
-      console.log(`Transaction hash: ${tx.hash}`);
+      log(`Transaction hash: ${tx.hash}`);
       const receipt = await tx.wait();
-      console.log(`Transaction confirmed in block ${receipt.blockNumber}`);
-      console.log(`Gas used: ${receipt.gasUsed.toString()}`);
+      log(`Transaction confirmed in block ${receipt.blockNumber}`);
+      log(`Gas used: ${receipt.gasUsed.toString()}`);
       jobTXPending = false;
     }
   } catch (error) {
     jobTXPending = false;
-    console.log(error.reason);
+    log(error.reason);
   }
 }
 
@@ -47,4 +51,4 @@ setInterval(async function () {
   if (!jobTXPending) {
     await main();
   }
-}, 30000);
+}, 2000);

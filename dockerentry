@@ -1,0 +1,24 @@
+#!/bin/bash
+while read line; do
+
+    IFS='=' read -ra envVar <<< $line;
+
+    if [ ${envVar[0]} == "MNEMONIC" ]
+    then
+        if [ -z "${envVar[1]}" ]
+        then
+            echo "Creating a wallet";
+            filename="wallet-"`date "+%Y-%m-%d-%Hh%Mm"`;
+            node createwallet.js ;
+            mnemonic=`cat walletGenerated`
+            mkdir -p wallets
+            mv "walletGenerated" "wallets/$filename"
+            echo "Wallet's mnemonic saved to: "$filename;
+            sed -i 's/^MNEMONIC=$/MNEMONIC='"$mnemonic"'/gm' .env
+            break;
+        fi
+    fi
+
+done < .env
+
+npm start
