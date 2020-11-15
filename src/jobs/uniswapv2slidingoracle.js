@@ -1,5 +1,7 @@
 //Import libraries
 const ethers = require("ethers");
+const { Logger } = require("../helper/logger")
+const log = Logger("Uniswapv2SlidingOracle");
 
 //Import config and abis
 const wallet = require("../config/wallet.js");
@@ -21,10 +23,6 @@ async function UpdateGas() {
   gas = gasx.high + 7; //Instant execution expected
 }
 
-function log(msg) {
-  console.log("[Uniswapv2SlidingOracle] " + msg)
-}
-
 async function main() {
   try {
     workable = await UniswapV2SlidingOracle.workable();
@@ -34,15 +32,15 @@ async function main() {
       const tx = await UniswapV2SlidingOracle.work({
         gasPrice: gas * 1e9,
       });
-      log(`Transaction hash: ${tx.hash}`);
+      log.info(`Transaction hash: ${tx.hash}`);
       const receipt = await tx.wait();
-      log(`Transaction confirmed in block ${receipt.blockNumber}`);
-      log(`Gas used: ${receipt.gasUsed.toString()}`);
+      log.info(`Transaction confirmed in block ${receipt.blockNumber}`);
+      log.info(`Gas used: ${receipt.gasUsed.toString()}`);
       jobTXPending = false;
     }
   } catch (error) {
     jobTXPending = false;
-    log(error.reason);
+    log.error(error.reason);
   }
 }
 

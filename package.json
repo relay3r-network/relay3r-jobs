@@ -6,12 +6,18 @@
   "author": "akshaynexus <akshaycm@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "test": "nyc mocha ./test"
   },
   "dependencies": {
     "axios": "^0.21.0",
     "dotenv": "^8.2.0",
     "ethers": "^5.0.19",
     "web3": "^1.3.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0"
   }
 }
