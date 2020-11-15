@@ -1,5 +1,7 @@
 //Import libraries
 const ethers = require("ethers");
+const { Logger } = require("../helper/logger")
+const log = Logger("YearnV1EarnKeeper");
 
 //Import config and abis
 const wallet = require("../config/wallet.js");
@@ -34,15 +36,15 @@ async function main() {
       const tx = await YearnV1EarnKeeper.work({
         gasPrice: gas * 1e9
       });
-      log(`Transaction hash: ${tx.hash}`);
+      log.info(`Transaction hash: ${tx.hash}`);
       const receipt = await tx.wait();
-      log(`Transaction confirmed in block ${receipt.blockNumber}`);
-      log(`Gas used: ${receipt.gasUsed.toString()}`);
+      log.info(`Transaction confirmed in block ${receipt.blockNumber}`);
+      log.info(`Gas used: ${receipt.gasUsed.toString()}`);
       jobTXPending = false;
     }
   } catch (error) {
     jobTXPending = false;
-    log(error.reason);
+    log.error(error.reason);
   }
 }
 
