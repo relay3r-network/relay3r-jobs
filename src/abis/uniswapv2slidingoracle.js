@@ -1,5 +1,5 @@
 const config = {
-  address: "0xAbC29C8bF08F311DAdFdd8B220f1d1FCF6C64C8D",
+  address: "0x6c981ebBA3bF0E4482A5c5E9666F69362737Ff71",
   abi: [
     "function KP3R (  ) external view returns ( address )",
     "function acceptGovernance (  ) external",
