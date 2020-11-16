@@ -2,29 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="097b7e11-5701-4be8-89f2-90f945555e52" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/JobHandler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/abis/CoreFlashArbRelay3r.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jobs/Job.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jobs/JobExecutor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jobs/SushiSwapKeep3rJob.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jobs/UniswapV2SlidingOracleJob.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jobs/UnitradeRelay3rJob.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jobs/YearnV1EarnKeeperJob.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test-Job.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test-JobExecutor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test-JobHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abis/uniswapv2slidingoracle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/abis/uniswapv2slidingoracle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abis/unitraderelay3r.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/abis/unitraderelay3r.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/provider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/provider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jobs/sushiswapkeep3r.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jobs/uniswapv2slidingoracle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jobs/unitraderelay3r.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jobs/yearnv1earnkeeper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test-logger.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/test-logger.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +133,7 @@
       <updated>1605399664553</updated>
       <workItem from="1605399665595" duration="1057000" />
       <workItem from="1605403928526" duration="2313000" />
-      <workItem from="1605476338784" duration="20065000" />
+      <workItem from="1605476338784" duration="21432000" />
     </task>
     <servers />
   </component>
