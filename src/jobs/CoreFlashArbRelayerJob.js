@@ -20,7 +20,7 @@ class CoreFlashArbRelayerJob extends Job {
     }
 
     callWork(gas){
-        return this.contract.work(this.profitableStrats, {
+        return this.contract.workBatch(this.profitableStrats, {
             gasPrice: gas * 1e9,
         });
     }
