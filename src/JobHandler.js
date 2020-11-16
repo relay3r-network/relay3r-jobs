@@ -1,3 +1,4 @@
+const {CoreFlashArbRelayerJob} = require("./jobs/CoreFlashArbRelayerJob");
 const {JobExecutor} = require("./jobs/JobExecutor");
 const {UnitradeRelay3r} = require("./jobs/UnitradeRelay3rJob");
 const {UniswapV2SlidingOracleJob} = require("./jobs/UniswapV2SlidingOracleJob");
@@ -15,8 +16,12 @@ class JobHandler {
     }
 
     registerAvailableJobs(){
-        this.availableJobs.push(new UniswapV2SlidingOracleJob(this.account));
-        this.availableJobs.push(new UnitradeRelay3r(this.account));
+        this.availableJobs.push(
+            new UniswapV2SlidingOracleJob(this.account),
+            new UnitradeRelay3r(this.account),
+            new CoreFlashArbRelayerJob(this.account)
+        );
+
     }
 
     start(jobName) {
