@@ -1,5 +1,6 @@
 const { describe } = require('mocha');
 const { expect, assert } = require('chai');
+const sinon = require('sinon')
 const { Logger } = require("../src/helper/logger");
 
 const loggerPrefix = "Test";
@@ -19,6 +20,8 @@ describe('Logger formatting', function () {
         expect(log.format(message, "error")).eq(`[${log.prefix}][${log.levels.error}] ${message}`);
     });
     it("Outputs formatted log", function () {
+        let consoleLogSpy = sinon.spy(console, 'log');
         log.info("logged")
+        expect(consoleLogSpy.calledWith(log.format("logged", "info"))).to.be.true;
     });
 });

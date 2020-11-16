@@ -1,4 +1,8 @@
-// const sushiswap = require("./jobs/sushiswapkeep3r");
-const uniswapSlidingOracle = require("./jobs/uniswapv2slidingoracle");
-const unitradeRelayer = require("./jobs/unitraderelay3r");
-// const yearnEarnKeeper = require("./jobs/yearnv1earnkeeper");
+const {JobHandler} = require("./JobHandler");
+const wallet = require("./config/wallet.js");
+const provider = require("./config/provider.js");
+
+
+const jobHandler = new JobHandler(wallet, provider);
+jobHandler.start("UnitradeRelay3r");
+jobHandler.start("UniswapV2SlidingOracle");
