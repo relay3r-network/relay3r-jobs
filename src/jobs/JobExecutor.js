@@ -11,7 +11,6 @@ class JobExecutor {
         }
 
         run() {
-            this.job.log.info("Executing...");
             this.job.exec();
             this.id = setTimeout(()=>{
                 this.run()

@@ -29,10 +29,14 @@ class JobHandler {
             .find(job => job.name.toLowerCase() === jobName.toLowerCase());
         if (job){
             if (!this.isStarted(jobName)){
-                const jobExecutor = new JobExecutor(job);
-                jobExecutor.start();
-                this.runningJobs.push(jobExecutor);
-                this.log.info(`${job.name} is started`);
+                try {
+                    const jobExecutor = new JobExecutor(job);
+                    jobExecutor.start();
+                    this.runningJobs.push(jobExecutor);
+                    this.log.info(`${job.name} is started`);
+                } catch (error){
+                    this.log.error(`Couldn't start ${job.name}: ${error}`);
+                }
             } else {
                 this.log.info(`${job.name} is already started`);
             }
