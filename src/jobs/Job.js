@@ -20,7 +20,7 @@ class Job {
         try {
             return await this.contract["workable()"]();
         } catch (error) {
-            this.log.error("Error evaluating if workable:", error);
+            this.log.error("Error evaluating if workable:"+ error);
         }
         return false;
     }

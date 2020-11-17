@@ -10,7 +10,6 @@ class CoreFlashArbRelayerJob extends Job {
     }
 
     async isWorkable(){
-        return true;
         try {
             this.profitableStrats = await this.contract.profitableStrats();
             return this.profitableStrats.length > 0;
