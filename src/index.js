@@ -21,7 +21,7 @@ const waitProviderSync = () => {
                 }
             }, 1000);
         } catch (error){
-            console.log("Couldn't start:"+error)
+            console.log("Couldn't start: "+error)
         }
     })
 }

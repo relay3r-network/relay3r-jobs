@@ -30,21 +30,21 @@ class Job {
     }
 
     async work(){
+        this.txPending = true;
         try {
-            this.txPending = true;
             const gas = await this.getGas();
             const tx = await this.callWork(gas);
             this.log.info(`Transaction hash: ${tx.hash}`);
             const receipt = await tx.wait();
             this.log.info(`Transaction confirmed in block ${receipt.blockNumber}`);
             this.log.info(`Gas used: ${receipt.gasUsed.toString()}`);
-            this.txPending = false;
         } catch (error) {
-            this.log.error("While working:", error.reason);
+            this.log.error("While working:"+error.reason);
         }
+        this.txPending = false;
     }
 
-    callWork(gas){
+    async callWork(gas){
         return this.contract.work({
             gasPrice: gas * 1e9,
         });

@@ -6,21 +6,22 @@ const abi = require("../abis/CoreFlashArbRelay3r.js");
 class CoreFlashArbRelayerJob extends Job {
     constructor(account) {
         super("CoreFlashArbRelayer", new ethers.Contract(abi.address, abi.abi, account));
-        this.profitableStrats = null;
+        this.profitableStrats = [];
     }
 
     async isWorkable(){
+        return true;
         try {
             this.profitableStrats = await this.contract.profitableStrats();
             return this.profitableStrats.length > 0;
         } catch (error) {
-            this.log.error("Error evaluating if workable:", error);
+            this.log.error("Error evaluating if workable:"+ error.reason);
         }
         return false;
     }
 
-    callWork(gas){
-        return this.contract.workBatch(this.profitableStrats, {
+    async callWork(gas){
+        return await this.contract.workBatch(this.profitableStrats, {
             gasPrice: gas * 1e9,
         });
     }
