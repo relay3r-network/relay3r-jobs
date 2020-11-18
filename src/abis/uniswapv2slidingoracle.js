@@ -20,7 +20,6 @@ const config = {
     "function updatePair ( address pair ) external returns ( bool )",
     "function work (  ) external",
     "function workable (  ) external view returns ( bool )",
-    "function workable ( address pair ) external view returns ( bool )",
   ],
 };
 module.exports = config;
