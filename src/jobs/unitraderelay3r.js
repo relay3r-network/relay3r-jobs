@@ -18,7 +18,7 @@ let gas = 20;
 
 async function UpdateGas() {
   let gasx = await getCurrentGasPrices();
-  gas = gasx.high + 7; //Instant execution expected
+  gas = gasx.high + 2;
 }
 
 function log(msg) {

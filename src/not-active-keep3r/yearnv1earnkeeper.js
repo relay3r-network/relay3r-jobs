@@ -9,7 +9,7 @@ const { getCurrentGasPrices } = require("../helper/gasGetter");
 
 //Initialize account and abi
 const account = wallet.connect(provider);
-const SushiswapV2Keep3r = new ethers.Contract(address, abi, account);
+const YearnV1EarnKeeper = new ethers.Contract(address, abi, account);
 
 //Global vars for job exec
 let jobTXPending = false;
@@ -18,23 +18,23 @@ let gas = 20;
 
 async function UpdateGas() {
   let gasx = await getCurrentGasPrices();
-  gas = gasx.high + 7; //Instant execution expected
+  gas = gasx.high + 2;
 }
 
 function log(msg) {
-  console.log("[SushiSwapKeep3r] " + msg)
+  console.log("[YearnV1EarnKeeper] " + msg)
 }
 
 async function main() {
   try {
-    workable = await SushiswapV2Keep3r.workable();
+    workable = await YearnV1EarnKeeper.workable();
     if (!jobTXPending && workable) {
       await UpdateGas();
       jobTXPending = true;
-      const tx = await SushiswapV2Keep3r.work({
-        gasPrice: gas * 1e9,
+      const tx = await YearnV1EarnKeeper.work({
+        gasPrice: gas * 1e9
       });
-      log(`Tx hash: ${tx.hash}`);
+      log(`Transaction hash: ${tx.hash}`);
       const receipt = await tx.wait();
       log(`Transaction confirmed in block ${receipt.blockNumber}`);
       log(`Gas used: ${receipt.gasUsed.toString()}`);
@@ -46,10 +46,8 @@ async function main() {
   }
 }
 
-
-
 setInterval(async function () {
   if (!jobTXPending) {
     await main();
   }
-}, 2000);
+}, 30000);

@@ -4,12 +4,12 @@ const ethers = require("ethers");
 //Import config and abis
 const wallet = require("../config/wallet.js");
 const provider = require("../config/provider.js");
-const { address, abi } = require("../abis/sushiswapv2keep3r.js");
+const { address, abi } = require("../abis/coreflasharbrelay3r.js");
 const { getCurrentGasPrices } = require("../helper/gasGetter");
 
 //Initialize account and abi
 const account = wallet.connect(provider);
-const YearnV1EarnKeeper = new ethers.Contract(address, abi, account);
+const CoreFlashArbRelay3rOptimizedV2 = new ethers.Contract(address, abi, account);
 
 //Global vars for job exec
 let jobTXPending = false;
@@ -18,21 +18,24 @@ let gas = 20;
 
 async function UpdateGas() {
   let gasx = await getCurrentGasPrices();
-  gas = gasx.high + 7; //Instant execution expected
+  gas = gasx.high + 2;
 }
 
 function log(msg) {
-  console.log("[YearnV1EarnKeeper] " + msg)
+  console.log("[CoreFlashArbRelay3rOptimizedV2] " + msg)
 }
 
 async function main() {
   try {
-    workable = await YearnV1EarnKeeper.workable();
+    workable = await CoreFlashArbRelay3rOptimizedV2.workable();
     if (!jobTXPending && workable) {
       await UpdateGas();
       jobTXPending = true;
-      const tx = await YearnV1EarnKeeper.work({
-        gasPrice: gas * 1e9
+      //Get profitable arb strats
+      let ArbProfitable = await CoreFlashArbRelay3rOptimizedV2.profitableStrats();
+      //Pass it to tx arg
+      const tx = await CoreFlashArbRelay3rOptimizedV2.workBatch(ArbProfitable, {
+        gasPrice: gas * 1e9,
       });
       log(`Transaction hash: ${tx.hash}`);
       const receipt = await tx.wait();
@@ -50,4 +53,4 @@ setInterval(async function () {
   if (!jobTXPending) {
     await main();
   }
-}, 30000);
+}, 10000);

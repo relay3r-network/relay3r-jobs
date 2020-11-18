@@ -4,7 +4,7 @@ const ethers = require("ethers");
 //Import config and abis
 const wallet = require("../config/wallet.js");
 const provider = require("../config/provider.js");
-const { address, abi } = require("../abis/sushiswapv2keep3r.js");
+const { address, abi } = require("../abis/uniswapv2slidingoracle.js");
 const { getCurrentGasPrices } = require("../helper/gasGetter");
 
 //Initialize account and abi
@@ -18,7 +18,7 @@ let gas = 20;
 
 async function UpdateGas() {
   let gasx = await getCurrentGasPrices();
-  gas = gasx.high + 7; //Instant execution expected
+  gas = gasx.high + 2;
 }
 
 function log(msg) {
