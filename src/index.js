@@ -4,7 +4,7 @@ const provider = require("./config/provider.js");
 const Web3 = require("web3")
 const {env} = require("./env");
 
-const web3 = new Web3(`https://mainnet.infura.io/v3/${env.INFURA_PROJECT_ID}`);
+const web3 = new Web3(provider.connection.url);
 
 const jobHandler = new JobHandler(wallet, provider);
 
@@ -17,9 +17,9 @@ const waitProviderSync = () => {
                     clearInterval(intervalId);
                     res();
                 } else {
-                    console.log("Waiting for eth node to be done syncing");
+                    console.log("Waiting for eth node to be done syncing, block number:"+await provider.getBlockNumber()+", syncing status:",isSyncing);
                 }
-            }, 1000);
+            }, 15000);
         } catch (error){
             console.log("Couldn't start: "+error)
         }

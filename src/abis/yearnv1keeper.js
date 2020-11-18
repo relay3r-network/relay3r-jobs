@@ -1,13 +1,60 @@
 const config = {
-  address: "0x9929fda713F40b385D9Af169c4441a18986D687B",
-  abi: [
-    "function BASE (  ) external view returns ( uint256 )",
-    "function KP3R (  ) external view returns ( address )",
-    "function THRESHOLD (  ) external view returns ( uint256 )",
-    "function shouldRebalance ( address _token ) external view returns ( bool )",
-    "function tokens (  ) external view returns ( address[] )",
-    "function work (  ) external",
-    "function workable (  ) external view returns ( bool )",
-  ],
+    address: "0xe7F4ab593aeC81EcA754Da1B3B7cE0C42a13Ec0C",
+    abi: [
+        {
+            "inputs": [],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "inputs": [],
+            "name": "BASE",
+            "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "KP3R",
+            "outputs": [{"internalType": "contract IKeep3rV1", "name": "", "type": "address"}],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "THRESHOLD",
+            "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [{"internalType": "contract IYERC20", "name": "_token", "type": "address"}],
+            "name": "shouldRebalance",
+            "outputs": [{"internalType": "bool", "name": "", "type": "bool"}],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "tokens",
+            "outputs": [{"internalType": "contract IYERC20[]", "name": "", "type": "address[]"}],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "work",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "workable",
+            "outputs": [{"internalType": "bool", "name": "", "type": "bool"}],
+            "stateMutability": "view",
+            "type": "function"
+        }
+    ],
 };
 module.exports = config;
