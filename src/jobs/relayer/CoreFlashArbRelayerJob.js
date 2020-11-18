@@ -1,11 +1,11 @@
-const {Job} = require("./Job");
+const {Job} = require("../Job");
 const ethers = require("ethers");
 
-const abi = require("../abis/CoreFlashArbRelay3r.js");
+const contract = require("../../contracts/relayer/CoreFlashArbRelay3r.js");
 
 class CoreFlashArbRelayerJob extends Job {
     constructor(account) {
-        super("CoreFlashArbRelayer", new ethers.Contract(abi.address, abi.abi, account));
+        super("CoreFlashArbRelayer", new ethers.Contract(contract.address, contract.abi, account));
         this.profitableStrats = [];
     }
 
