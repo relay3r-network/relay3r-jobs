@@ -39,7 +39,7 @@ class Job {
             this.log.info(`Transaction confirmed in block ${receipt.blockNumber}`);
             this.log.info(`Gas used: ${receipt.gasUsed.toString()}`);
         } catch (error) {
-            this.log.error("While working:"+error.reason);
+            this.log.error("While working:"+error);
         }
         this.txPending = false;
     }

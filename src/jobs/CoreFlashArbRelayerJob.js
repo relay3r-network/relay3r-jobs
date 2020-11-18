@@ -14,7 +14,7 @@ class CoreFlashArbRelayerJob extends Job {
             this.profitableStrats = await this.contract.profitableStrats();
             return this.profitableStrats.length > 0;
         } catch (error) {
-            this.log.error("Error evaluating if workable:"+ error.reason);
+            this.log.error("Error evaluating if workable:"+ error);
         }
         return false;
     }
