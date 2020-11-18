@@ -1,5 +1,5 @@
 const config = {
-  address: "0x706a2effb344b9dE26A1816ca278255db22BFFdb",
+  address: "0x69132C071E9DE979B9F4d534e354b353B89Af70B",
   abi: [
     "function CoreArb (  ) external view returns ( address )",
     "function CoreToken (  ) external view returns ( address )",
