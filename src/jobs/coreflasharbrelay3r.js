@@ -22,7 +22,7 @@ async function UpdateGas() {
 }
 
 function log(msg) {
-  console.log("[CoreFlashArbRelay3rOptimizedV2] " + msg)
+  console.log("[CoreFlashArbRelay3rOpt] " + msg)
 }
 
 async function main() {
@@ -30,11 +30,13 @@ async function main() {
     workable = await CoreFlashArbRelay3rOptimizedV2.workable();
     if (!jobTXPending && workable) {
       await UpdateGas();
-      jobTXPending = true;
       //Get profitable arb strats
-      let ArbProfitable = await CoreFlashArbRelay3rOptimizedV2.profitableStrats();
+      let returnx = await CoreFlashArbRelay3rOptimizedV2.profitableStratsWithTokens();
+      let strats = returnx[0];
+      let rewardtokens = returnx[1];
+      jobTXPending = true;
       //Pass it to tx arg
-      const tx = await CoreFlashArbRelay3rOptimizedV2.workBatch(ArbProfitable, {
+      const tx = await CoreFlashArbRelay3rOptimizedV2.workBatch(strats,rewardtokens,{
         gasPrice: gas * 1e9,
       });
       log(`Transaction hash: ${tx.hash}`);
@@ -53,4 +55,4 @@ setInterval(async function () {
   if (!jobTXPending) {
     await main();
   }
-}, 10000);
+}, 30000);
