@@ -1,15 +1,15 @@
 const {Job} = require("../Job");
 const ethers = require("ethers");
 
-const contract = require("../../contracts/keeper/yearnv1keeper.js");
+const contract = require("../../contracts/relayer/unitraderelay3r.js");
 
-class YearnV1EarnKeeperJob extends Job {
+class UnitradeRelayerJob extends Job {
     constructor(account, provider) {
-        super("YearnV1Keeper",
+        super("UnitradeRelayer",
             new ethers.Contract(contract.address, contract.abi, account),
             provider
         );
     }
 }
 
-exports.YearnV1EarnKeeperJob = YearnV1EarnKeeperJob;
+exports.UnitradeRelayerJob = UnitradeRelayerJob;

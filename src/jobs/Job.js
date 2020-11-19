@@ -2,18 +2,31 @@ const { getCurrentGasPrices } = require("../helper/gasGetter");
 const { Logger } = require("../helper/logger")
 
 class Job {
-    constructor(jobName, contract) {
+    constructor(jobName, contract, provider) {
         this.txPending = false;
         this.contract = contract;
         this.name = jobName;
         this.log = Logger(jobName);
+        this.provider = provider;
+        this.lastBlock = 0;
     }
 
     async exec(){
-        const workable = await this.isWorkable();
-        if (!this.txPending && workable) {
-            await this.work();
+        if (await this.isNewBlock()){
+            const workable = await this.isWorkable();
+            if (!this.txPending && workable) {
+                await this.work();
+            }
         }
+    }
+
+    async isNewBlock(){
+        const currentBlock = await this.provider.getBlockNumber();
+        if (currentBlock === this.lastBlock) {
+            return false;
+        }
+        this.lastBlock = currentBlock;
+        return true;
     }
 
     async isWorkable(){
@@ -51,7 +64,7 @@ class Job {
     }
 
     getNextExecTimeout() {
-        return 15000;
+        return 2000;
     }
 }
 

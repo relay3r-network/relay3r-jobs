@@ -4,8 +4,11 @@ const ethers = require("ethers");
 const contract = require("../../contracts/keeper/HegicPoolKeep3r.js");
 
 class HegicPoolKeeperJob extends Job {
-    constructor(account) {
-        super("HegicPoolKeeper", new ethers.Contract(contract.address, contract.abi, account));
+    constructor(account, provider) {
+        super("HegicPoolKeeper",
+            new ethers.Contract(contract.address, contract.abi, account),
+            provider
+        );
     }
 
     async callWork(gas){

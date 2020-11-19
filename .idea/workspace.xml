@@ -2,24 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="097b7e11-5701-4be8-89f2-90f945555e52" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/config/networks.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jobs/keeper/HegicPoolKeeperJob.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JobHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/JobHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abis/CoreFlashArbRelay3r.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contracts/relayer/CoreFlashArbRelay3r.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abis/hegicjob.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contracts/keeper/HegicPoolKeep3r.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abis/sushiswapv2keep3r.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abis/uniswapv2oracle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abis/uniswapv2slidingoracle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contracts/relayer/uniswapv2slidingoracle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abis/unitraderelay3r.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contracts/relayer/unitraderelay3r.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/abis/yearnv1keeper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contracts/keeper/yearnv1keeper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jobs/CoreFlashArbRelayerJob.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/jobs/relayer/CoreFlashArbRelayerJob.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jobs/SushiSwapKeep3rJob.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jobs/UniswapV2SlidingOracleJob.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/jobs/relayer/UniswapV2SlidingOracleJob.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jobs/UnitradeRelay3rJob.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/jobs/relayer/UnitradeRelay3rJob.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jobs/YearnV1EarnKeeperJob.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/jobs/keeper/YearnV1EarnKeeperJob.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/not-active-keep3r/hegickeeper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/not-active-keep3r/uniswapv2oracle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jobs/Job.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/jobs/Job.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jobs/keeper/HegicPoolKeeperJob.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/jobs/keeper/HegicPoolKeeperJob.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jobs/keeper/YearnV1EarnKeeperJob.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/jobs/keeper/YearnV1EarnKeeperJob.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jobs/relayer/CoreFlashArbRelayerJob.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/jobs/relayer/CoreFlashArbRelayerJob.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jobs/relayer/UniswapV2SlidingOracleJob.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/jobs/relayer/UniswapV2SlidingOracleJob.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jobs/relayer/UnitradeRelay3rJob.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/jobs/relayer/UnitradeRelayerJob.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test-Job.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/test-Job.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +45,8 @@
       <recent name="C:\Users\micdu\Code\relay3r-jobs" />
     </key>
   </component>
-  <component name="RunManager" selected="Mocha.JobExecutor tests.Should stop">
-    <configuration name="JobExecutor tests" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Mocha.Job class test">
+    <configuration name="Job class test" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -63,13 +55,13 @@
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/test/test-JobExecutor.js</test-file>
+      <test-file>$PROJECT_DIR$/test/test-Job.js</test-file>
       <test-names>
-        <name value="JobExecutor tests" />
+        <name value="Job class test" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="JobExecutor tests.Should exec and setTimout for next run" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="Job class test.should not work() bc block already checked" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -78,14 +70,14 @@
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/test/test-JobExecutor.js</test-file>
+      <test-file>$PROJECT_DIR$/test/test-Job.js</test-file>
       <test-names>
-        <name value="JobExecutor tests" />
-        <name value="Should exec and setTimout for next run" />
+        <name value="Job class test" />
+        <name value="should not work() bc block already checked" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="JobExecutor tests.Should start" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="Job class test.should not work() bc tx pending and not workable" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -94,14 +86,14 @@
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/test/test-JobExecutor.js</test-file>
+      <test-file>$PROJECT_DIR$/test/test-Job.js</test-file>
       <test-names>
-        <name value="JobExecutor tests" />
-        <name value="Should start" />
+        <name value="Job class test" />
+        <name value="should not work() bc tx pending and not workable" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="JobExecutor tests.Should stop" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="Job class test.should not work() bc tx pending" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -110,14 +102,14 @@
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/test/test-JobExecutor.js</test-file>
+      <test-file>$PROJECT_DIR$/test/test-Job.js</test-file>
       <test-names>
-        <name value="JobExecutor tests" />
-        <name value="Should stop" />
+        <name value="Job class test" />
+        <name value="should not work() bc tx pending" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="JobHandler class test.Utility function.isStarted should return true if job is started" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="Job class test.should test isWorkable() bc new block" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -126,21 +118,20 @@
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/test/test-JobHandler.js</test-file>
+      <test-file>$PROJECT_DIR$/test/test-Job.js</test-file>
       <test-names>
-        <name value="JobHandler class test" />
-        <name value="Utility function" />
-        <name value="isStarted should return true if job is started" />
+        <name value="Job class test" />
+        <name value="should test isWorkable() bc new block" />
       </test-names>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Mocha.JobExecutor tests.Should stop" />
-        <item itemvalue="Mocha.JobExecutor tests" />
-        <item itemvalue="Mocha.JobExecutor tests.Should start" />
-        <item itemvalue="Mocha.JobHandler class test.Utility function.isStarted should return true if job is started" />
-        <item itemvalue="Mocha.JobExecutor tests.Should exec and setTimout for next run" />
+        <item itemvalue="Mocha.Job class test" />
+        <item itemvalue="Mocha.Job class test.should test isWorkable() bc new block" />
+        <item itemvalue="Mocha.Job class test.should not work() bc block already checked" />
+        <item itemvalue="Mocha.Job class test.should not work() bc tx pending" />
+        <item itemvalue="Mocha.Job class test.should not work() bc tx pending and not workable" />
       </list>
     </recent_temporary>
   </component>
@@ -162,7 +153,7 @@
       <workItem from="1605631859420" duration="1899000" />
       <workItem from="1605640746441" duration="599000" />
       <workItem from="1605672794202" duration="2512000" />
-      <workItem from="1605730672415" duration="6597000" />
+      <workItem from="1605730672415" duration="9637000" />
     </task>
     <servers />
   </component>
@@ -182,22 +173,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1536.832/0.0.1920.1040/-1080.-483.1080.1880@0.0.1920.1040" timestamp="1605576289842" />
-    <state width="1899" height="281" key="GridCell.Tab.0.bottom" timestamp="1605677597861">
+    <state width="1899" height="281" key="GridCell.Tab.0.bottom" timestamp="1605748154773">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="281" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040/-1080.-483.1080.1880@0.0.1920.1040" timestamp="1605677597861" />
-    <state width="1899" height="281" key="GridCell.Tab.0.center" timestamp="1605677597861">
+    <state width="1899" height="281" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040/-1080.-483.1080.1880@0.0.1920.1040" timestamp="1605748154773" />
+    <state width="1899" height="281" key="GridCell.Tab.0.center" timestamp="1605748154772">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="281" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040/-1080.-483.1080.1880@0.0.1920.1040" timestamp="1605677597861" />
-    <state width="1899" height="281" key="GridCell.Tab.0.left" timestamp="1605677597861">
+    <state width="1899" height="281" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040/-1080.-483.1080.1880@0.0.1920.1040" timestamp="1605748154772" />
+    <state width="1899" height="281" key="GridCell.Tab.0.left" timestamp="1605748154772">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="281" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040/-1080.-483.1080.1880@0.0.1920.1040" timestamp="1605677597861" />
-    <state width="1899" height="281" key="GridCell.Tab.0.right" timestamp="1605677597861">
+    <state width="1899" height="281" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040/-1080.-483.1080.1880@0.0.1920.1040" timestamp="1605748154772" />
+    <state width="1899" height="281" key="GridCell.Tab.0.right" timestamp="1605748154772">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="281" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040/-1080.-483.1080.1880@0.0.1920.1040" timestamp="1605677597861" />
+    <state width="1899" height="281" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040/-1080.-483.1080.1880@0.0.1920.1040" timestamp="1605748154772" />
     <state width="1882" height="344" key="GridCell.Tab.1.bottom" timestamp="1605503666788">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -254,16 +245,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="760" y="421" key="git4idea.remote.GitConfigureRemotesDialog/1920.0.1536.832/0.0.1920.1040/-1080.-483.1080.1880@0.0.1920.1040" timestamp="1605502058973" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/jobs/Job.js</url>
-          <line>12</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -4,8 +4,11 @@ const ethers = require("ethers");
 const contract = require("../../contracts/relayer/CoreFlashArbRelay3r.js");
 
 class CoreFlashArbRelayerJob extends Job {
-    constructor(account) {
-        super("CoreFlashArbRelayer", new ethers.Contract(contract.address, contract.abi, account));
+    constructor(account, provider) {
+        super("CoreFlashArbRelayer",
+            new ethers.Contract(contract.address, contract.abi, account),
+            provider
+        );
         this.profitableStrats = [];
     }
 

@@ -19,7 +19,7 @@ const waitProviderSync = () => {
                 } else {
                     console.log("Waiting for eth node to be done syncing, block number:"+await provider.getBlockNumber()+", syncing status:",isSyncing);
                 }
-            }, 15000);
+            }, 1000);
         } catch (error){
             console.log("Couldn't start: "+error)
         }
