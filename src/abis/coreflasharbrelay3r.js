@@ -1,5 +1,5 @@
 const config = {
-  address: "0x7905AAE5E92D9Ff324d0b2Ae5220e2Bb0078553a",
+  address: "0xaeDC35E4307E1e3eE6d35AF3A69eCA01542D7cea",
   abi: [
     "function CoreArb (  ) external view returns ( address )",
     "function CoreToken (  ) external view returns ( address )",
@@ -13,6 +13,9 @@ const config = {
     "function renounceOwnership (  ) external",
     "function setCoreArbAddress ( address newContract ) external",
     "function transferOwnership ( address newOwner ) external",
+    "function getMostProfitableStratWithToken (  ) external view returns ( uint256, address )",
+    "function hasMostProfitableStrat (  ) external view returns ( bool )",
+    "function work ( uint256 strat, address rewardToken ) external",
     "function workBatch ( uint[] profitable, address[] rewardTokens ) external",
     "function workable (  ) external view returns ( bool )",
   ],
