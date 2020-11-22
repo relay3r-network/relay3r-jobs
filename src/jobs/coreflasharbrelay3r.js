@@ -38,7 +38,6 @@ async function main() {
       //Pass it to tx arg,first arg is the strat and second is the reward token
       const tx = await CoreFlashArbRelay3rOptimizedV2.work(returnx[0].toNumber(),returnx[1],{
         gasPrice: gas * 1e9,
-        gasLimit:1000000//1mil gas limit
       });
       log(`Transaction hash: ${tx.hash}`);
       const receipt = await tx.wait();
