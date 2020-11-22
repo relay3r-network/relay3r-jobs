@@ -33,8 +33,10 @@ async function main() {
       //Get profitable arb strats
       let returnx = await CoreFlashArbRelay3rOptimizedV2.getMostProfitableStratWithToken();
       jobTXPending = true;
+      console.log(`Return eth is ${returnx[0].toNumber()}`)
+      console.log(`${returnx[1]} is token`);
       //Pass it to tx arg,first arg is the strat and second is the reward token
-      const tx = await CoreFlashArbRelay3rOptimizedV2.work(returnx[0],returnx[1],{
+      const tx = await CoreFlashArbRelay3rOptimizedV2.work(returnx[0].toNumber(),returnx[1],{
         gasPrice: gas * 1e9,
       });
       log(`Transaction hash: ${tx.hash}`);
@@ -53,4 +55,4 @@ setInterval(async function () {
   if (!jobTXPending) {
     await main();
   }
-}, 3000);
+}, 30000);
