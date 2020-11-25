@@ -2,6 +2,19 @@
 
 This repo contains a collection of nodejs scripts to make setup of a keeper easier and simpler
 
+## Available Jobs
+
+### [Relayer](https://relay3r.network)
+
+- UnitradeRelayer
+- UniswapV2SlidingOracle
+- CoreFlashArbRelayer
+
+### [Keep3r](https://keep3r.network/)
+
+- YearnV1Keeper
+- HegicPoolKeeper
+
 ## Getting started
 
 ### With Docker
@@ -14,14 +27,13 @@ MNEMONIC=
 INFURA_PROJECT_ID=
 JOBS=UniswapV2SlidingOracle,UnitradeRelay3r
 ```
-- If you want to use an existing wallet set your MNEMONIC
+- If you want to use an existing wallet set your MNEMONIC in the .env
 - Get an Infura Project Id from [Infura](https://infura.io/dashboard) and set it to INFURA_PROJECT_ID key
-- Set the jobs you want to work on in the .env, concat the names with comma.
-- Run docker-compose up. Note your mnemonic phrase and private key. Make sure no errors are printed to the console.
-- Close the container with Ctrl+C and relaunch it with docker-compose start
+- Set the jobs you want to work on in the .env, concat the names with comma. Refer to the "Available Jobs" section for the names.
+- Run `docker-compose up -d` to start the container in the background.
+- If you did not supply a wallet, one will be created automatically. The mnemonic will be set in the .env file. Make sure to note it in case you loose the file. You will be able to see the address by looking at the log files with `docker-compose logs`
 
-
-By default all jobs are running. If you want to disable some jobs you have to comment their require in src/index.js.
+Your container is set to restart everytime if it crashes or when Docker is launching. If you want to disable this behavior change `restart: always` to `restart: "no"` in the `docker-compose.yml` file.
 
 ### Without Docker
 
