@@ -8,6 +8,7 @@ const { Logger } = require("./helper/logger");
 class JobHandler {
 
     constructor(wallet, provider) {
+        this.provider = provider;
         this.account = wallet.connect(provider);
         this.availableJobs = [];
         this.registerAvailableJobs();
@@ -34,7 +35,7 @@ class JobHandler {
         if (job){
             if (!this.isStarted(jobName)){
                 try {
-                    const jobExecutor = new JobExecutor(job);
+                    const jobExecutor = new JobExecutor(job, this.provider);
                     jobExecutor.start();
                     this.runningJobs.push(jobExecutor);
                     this.log.info(`${job.name} is started`);

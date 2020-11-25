@@ -8,25 +8,13 @@ class Job {
         this.name = jobName;
         this.log = Logger(jobName);
         this.provider = provider;
-        this.lastBlock = 0;
     }
 
     async exec(){
-        if (await this.isNewBlock()){
-            const workable = await this.isWorkable();
-            if (!this.txPending && workable) {
-                await this.work();
-            }
+        const workable = await this.isWorkable();
+        if (!this.txPending && workable) {
+            await this.work();
         }
-    }
-
-    async isNewBlock(){
-        const currentBlock = await this.provider.getBlockNumber();
-        if (currentBlock === this.lastBlock) {
-            return false;
-        }
-        this.lastBlock = currentBlock;
-        return true;
     }
 
     async isWorkable(){
