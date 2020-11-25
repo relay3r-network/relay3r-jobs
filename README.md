@@ -1,6 +1,6 @@
 ## Relay3r Jobs
 
-This repo contains a collection of nodejs scripts to make setup of a keeper easier and simpler
+This repo contains everything you need to run be a Relayer.
 
 ## Available Jobs
 
@@ -18,6 +18,11 @@ This repo contains a collection of nodejs scripts to make setup of a keeper easi
 ## Getting started
 
 ### With Docker
+
+You will need to have Docker and Docker-Compose installed. Refer to [the Docker installation guide](https://docs.docker.com/engine/install/).
+If you are running the relayer on a Linux server, you will have to install docker-compose separately. Refer to [docker-compose installation guide](https://docs.docker.com/engine/install/)
+
+#### Steps to launch your relayer
 
 - Rename the file env.example to .env
 
