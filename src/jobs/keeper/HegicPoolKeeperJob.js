@@ -18,4 +18,4 @@ class HegicPoolKeeperJob extends Job {
     }
 }
 
-exports.YearnV1EarnKeeperJob = HegicPoolKeeperJob;
+exports.HegicPoolKeeperJob = HegicPoolKeeperJob;

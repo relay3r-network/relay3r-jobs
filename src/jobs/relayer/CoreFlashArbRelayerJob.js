@@ -9,22 +9,22 @@ class CoreFlashArbRelayerJob extends Job {
             new ethers.Contract(contract.address, contract.abi, account),
             provider
         );
-        this.profitableStrats = [];
+        this.hasMostProfitableStrat = false;
+        this.workCallData = undefined;
     }
 
-    async isWorkable(){
+    isWorkable = async () =>{
         try {
             this.hasMostProfitableStrat = await this.contract.hasMostProfitableStrat();
-            if(this.hasMostProfitableStrat)
-                this.workCallData = await this.contract.getMostProfitableStratWithToken();
-            return this.profitableStrats;
+            return this.hasMostProfitableStrat;
         } catch (error) {
-            this.log.error("Error evaluating if workable:"+ error);
+            this.log.error("Error evaluating if workablexx:"+ error);
         }
         return false;
     }
 
     async callWork(gas){
+        this.workCallData = await this.contract.getMostProfitableStratWithToken();
         return await this.contract.work(this.workCallData[0],this.workCallData[1], {
             gasPrice: gas * 1e9,
         });
