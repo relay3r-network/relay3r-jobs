@@ -12,7 +12,7 @@ class HegicPoolKeeperJob extends Job {
     }
 
     async callWork(gas){
-        return await this.contract.claimRewards(this.profitableStrats, {
+        return await this.contract.claimRewards({
             gasPrice: gas * 1e9,
         });
     }
