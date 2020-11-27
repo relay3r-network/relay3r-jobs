@@ -6,6 +6,7 @@ const {UniswapV2SlidingOracleJob} = require("./jobs/relayer/UniswapV2SlidingOrac
 //Keeper jobs
 const {HegicPoolKeeperJob} = require("./jobs/keeper/HegicPoolKeeperJob");
 const {YearnV1EarnKeeperJob} = require("./jobs/keeper/YearnV1EarnKeeperJob");
+const {Keep3rV1OracleJob} = require("./jobs/keeper/Keep3rV1OracleJob");
 
 const { Logger } = require("./helper/logger");
 
@@ -22,11 +23,14 @@ class JobHandler {
 
     registerAvailableJobs(){
         this.availableJobs.push(
+            //Relayer jobs
             this.createJob(UniswapV2SlidingOracleJob),
             this.createJob(UnitradeRelayerJob),
             this.createJob(CoreFlashArbRelayerJob),
+            //Keeper jobs
             this.createJob(HegicPoolKeeperJob),
             this.createJob(YearnV1EarnKeeperJob),
+            this.createJob(Keep3rV1OracleJob),
         );
 
     }
