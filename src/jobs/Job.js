@@ -52,7 +52,7 @@ class Job {
     }
 
     getNextExecTimeout() {
-        return 2000;
+        return 15000;//Check each 15 seconds
     }
 }
 
