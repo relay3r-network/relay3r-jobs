@@ -14,8 +14,10 @@ class CoreFlashArbRelayerJob extends Job {
 
     async isWorkable(){
         try {
-            this.profitableStrats = await this.contract.profitableStrats();
-            return this.profitableStrats.length > 0;
+            this.hasMostProfitableStrat = await this.contract.hasMostProfitableStrat();
+            if(this.hasMostProfitableStrat)
+                this.workCallData = await this.contract.getMostProfitableStratWithToken();
+            return this.profitableStrats;
         } catch (error) {
             this.log.error("Error evaluating if workable:"+ error);
         }
@@ -23,7 +25,7 @@ class CoreFlashArbRelayerJob extends Job {
     }
 
     async callWork(gas){
-        return await this.contract.workBatch(this.profitableStrats, {
+        return await this.contract.work(this.workCallData[0],this.workCallData[1], {
             gasPrice: gas * 1e9,
         });
     }
