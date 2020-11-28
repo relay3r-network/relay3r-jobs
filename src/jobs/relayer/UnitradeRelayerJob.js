@@ -10,6 +10,13 @@ class UnitradeRelayerJob extends Job {
             provider
         );
     }
+
+    async callWork(gas){
+        this.orderList = await this.contract.getExecutableOrdersList();
+        return await this.contract.work(this.orderList, {
+            gasPrice: gas * 1e9,
+        });
+    }
 }
 
 exports.UnitradeRelayerJob = UnitradeRelayerJob;
