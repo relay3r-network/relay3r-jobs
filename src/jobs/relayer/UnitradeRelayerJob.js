@@ -13,7 +13,8 @@ class UnitradeRelayerJob extends Job {
 
     async callWork(gas){
         this.orderList = await this.contract.getExecutableOrdersList();
-        return await this.contract.work(this.orderList, {
+        log(`Executing orders ${this.orderList.toString()}`);
+        return await this.contract.workBatch(this.orderList, {
             gasPrice: gas * 1e9,
         });
     }
