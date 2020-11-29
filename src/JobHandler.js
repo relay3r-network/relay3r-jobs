@@ -3,6 +3,8 @@ const {JobExecutor} = require("./jobs/JobExecutor");
 const {CoreFlashArbRelayerJob} = require("./jobs/relayer/CoreFlashArbRelayerJob");
 const {UnitradeRelayerJob} = require("./jobs/relayer/UnitradeRelayerJob");
 const {UniswapV2SlidingOracleJob} = require("./jobs/relayer/UniswapV2SlidingOracleJob");
+const {GetBackETHRelayerJob} = require("./jobs/relayer/GetBackETHRelayerJob");
+
 //Keeper jobs
 const {HegicPoolKeeperJob} = require("./jobs/keeper/HegicPoolKeeperJob");
 const {YearnV1EarnKeeperJob} = require("./jobs/keeper/YearnV1EarnKeeperJob");
@@ -29,6 +31,7 @@ class JobHandler {
             this.createJob(UniswapV2SlidingOracleJob),
             this.createJob(UnitradeRelayerJob),
             this.createJob(CoreFlashArbRelayerJob),
+            this.createJob(GetBackETHRelayerJob),
             //Keeper jobs
             this.createJob(HegicPoolKeeperJob),
             this.createJob(YearnV1EarnKeeperJob),
