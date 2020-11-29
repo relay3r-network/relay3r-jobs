@@ -1,5 +1,5 @@
 const config = {
-  address: "0x34bcA098B78E2291E6b8E321Cc9bfB9F451713A3",
+  address: "0xF647c8E117115fCAEf2A2b28060b258437d054B2",
   abi: [
     "function workBatch (uint[] memory orderList) external",
     "function getExecutableOrdersList() external view returns (uint[] memory)",
