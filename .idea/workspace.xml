@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="097b7e11-5701-4be8-89f2-90f945555e52" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env.example" beforeDir="false" afterPath="$PROJECT_DIR$/env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jobs/JobExecutor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/jobs/JobExecutor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test-Job.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/test-Job.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +37,7 @@
       <recent name="C:\Users\micdu\Code\relay3r-jobs" />
     </key>
   </component>
-  <component name="RunManager" selected="Mocha.Job class test">
+  <component name="RunManager" selected="Mocha.JobExecutor tests.Should stop">
     <configuration name="Job class test" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -69,38 +69,6 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Job class test.should not work() bc tx pending and not workable" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <ui>bdd</ui>
-      <extra-mocha-options />
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/test/test-Job.js</test-file>
-      <test-names>
-        <name value="Job class test" />
-        <name value="should not work() bc tx pending and not workable" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Job class test.should not work() bc tx pending" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <ui>bdd</ui>
-      <extra-mocha-options />
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/test/test-Job.js</test-file>
-      <test-names>
-        <name value="Job class test" />
-        <name value="should not work() bc tx pending" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <configuration name="Job class test.should test isWorkable() bc new block" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -117,13 +85,45 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="JobExecutor tests.Should start" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/test/test-JobExecutor.js</test-file>
+      <test-names>
+        <name value="JobExecutor tests" />
+        <name value="Should start" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="JobExecutor tests.Should stop" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/test/test-JobExecutor.js</test-file>
+      <test-names>
+        <name value="JobExecutor tests" />
+        <name value="Should stop" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Mocha.JobExecutor tests.Should stop" />
+        <item itemvalue="Mocha.JobExecutor tests.Should start" />
         <item itemvalue="Mocha.Job class test" />
         <item itemvalue="Mocha.Job class test.should test isWorkable() bc new block" />
         <item itemvalue="Mocha.Job class test.should not work() bc block already checked" />
-        <item itemvalue="Mocha.Job class test.should not work() bc tx pending" />
-        <item itemvalue="Mocha.Job class test.should not work() bc tx pending and not workable" />
       </list>
     </recent_temporary>
   </component>
@@ -153,7 +153,7 @@
       <workItem from="1606193189117" duration="48000" />
       <workItem from="1606274294419" duration="105000" />
       <workItem from="1606275769474" duration="3569000" />
-      <workItem from="1606774249846" duration="201000" />
+      <workItem from="1606774249846" duration="490000" />
     </task>
     <servers />
   </component>

@@ -12,22 +12,11 @@ class JobExecutor {
             this.run()
         }
 
-        async run() {
-            if (await this.isNewBlock()) {
-                this.job.exec();
-            }
+        run() {
+            this.job.exec();
             this.id = setTimeout(()=>{
                 this.run()
             }, this.getTimeout())
-        }
-
-        async isNewBlock(){
-            const currentBlock = await this.provider.getBlockNumber();
-            if (currentBlock === this.lastBlock) {
-                return false;
-            }
-            this.lastBlock = currentBlock;
-            return true;
         }
 
         getTimeout(){
