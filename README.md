@@ -6,14 +6,18 @@ This repo contains everything you need to run be a Relayer.
 
 ### [Relayer](https://relay3r.network)
 
-- UnitradeRelayer
-- UniswapV2SlidingOracle
 - CoreFlashArbRelayer
+- GetBackETHRelayer
+- UniswapV2SlidingOracle
+- UnitradeRelayer
 
 ### [Keep3r](https://keep3r.network/)
 
-- YearnV1Keeper
+- CrvStrategyKeep3r
+- DForceStrategyKeep3r
 - HegicPoolKeeper
+- Keep3rV1Oracle
+- YearnV1Keeper
 
 ## Getting started
 
