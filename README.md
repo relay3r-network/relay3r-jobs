@@ -1,8 +1,13 @@
-## Relay3r Jobs
+## Relay3r Jobs -  forked to now support Lock3r
 
 This repo contains everything you need to run be a Relayer.
 
 ## Available Jobs
+
+### [Locker](https://lock3r.network/)
+
+- OracleLockerJob
+- CoreFlashArbLockerJob
 
 ### [Relayer](https://relay3r.network)
 
