@@ -16,9 +16,10 @@ const { Logger } = require("./helper/logger");
 
 class JobHandler {
 
-    constructor(wallet, provider) {
-        this.provider = provider;
+    constructor(wallet, provider, maxProviderCall) {
         this.account = wallet.connect(provider);
+        this.provider = provider;
+        this.maxProviderCall = maxProviderCall;
         this.availableJobs = [];
         this.registerAvailableJobs();
         this.runningJobs = [];
@@ -56,6 +57,7 @@ class JobHandler {
                     jobExecutor.start();
                     this.runningJobs.push(jobExecutor);
                     this.log.info(`${job.name} is started`);
+                    this.updateJobTimeout();
                 } catch (error){
                     this.log.error(`Couldn't start ${job.name}: ${error}`);
                 }
@@ -65,6 +67,14 @@ class JobHandler {
         } else {
             this.log.warning(`${jobName} was not found`);
         }
+    }
+
+    updateJobTimeout() {
+        const msInADay = 86400000;
+        const callNeededToRunAllJobsOnce = (2 * this.runningJobs.length);
+        const numberOfRuns = this.maxProviderCall/callNeededToRunAllJobsOnce
+        const newTimeout = msInADay/numberOfRuns;
+        this.runningJobs.forEach(job => job.timeout = newTimeout);
     }
 
     isStarted(jobName){
@@ -82,6 +92,7 @@ class JobHandler {
             executor.stop();
             this.runningJobs = this.runningJobs.filter(jobExec => jobExec !== executor);
             this.log.info(`${executor.job.name} is stopped`);
+            this.updateJobTimeout();
         } else {
             this.log.info(`${jobName} is not started`);
         }

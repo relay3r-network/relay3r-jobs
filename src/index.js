@@ -5,8 +5,8 @@ const Web3 = require("web3")
 const {env} = require("./env");
 
 const web3 = new Web3(provider.connection.url);
-
-const jobHandler = new JobHandler(wallet, provider);
+const maxApiCall = env.API_CALL_LIMIT? env.API_CALL_LIMIT:100000;
+const jobHandler = new JobHandler(wallet, provider, maxApiCall);
 
 const waitProviderSync = () => {
     return new Promise((res) => {
