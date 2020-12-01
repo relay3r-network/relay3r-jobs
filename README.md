@@ -10,7 +10,7 @@ This repo contains everything you need to run be a Relayer.
 - GetBackETHRelayer
 - UniswapV2SlidingOracle
 - UnitradeRelayer
-- BCAFarmerRelayer
+- BACFarmerRelayer
 
 ### [Keep3r](https://keep3r.network/)
 

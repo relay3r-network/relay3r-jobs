@@ -5,5 +5,4 @@ const config = {
       "function workable (  ) external view returns ( bool )",
     ],
   };
-  module.exports = config;
-  
+module.exports = config;
