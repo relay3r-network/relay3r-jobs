@@ -1,0 +1,24 @@
+name: Docker build and publish image
+
+on:
+  push:
+    branches: [ new-combined ]
+  pull_request:
+    branches: [ new-combined ]
+jobs:
+  docker-build-and-push:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Push app to GitHub Packages
+      uses: docker/build-push-action@v1
+      with:
+        path: .
+        dockerfile: ./dockerfile
+        username: ${{ github.actor }}
+        password: ${{ secrets.REGISTRY_TOKEN }}
+        registry: docker.pkg.github.com
+        repository: relay3r-network/relay3r-jobs/node
+        tag_with_ref: true

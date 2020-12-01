@@ -8,6 +8,7 @@ class Job {
         this.name = jobName;
         this.log = Logger(jobName);
         this.provider = provider;
+        this.timeout = 25000
     }
 
     async exec(){
@@ -52,7 +53,7 @@ class Job {
     }
 
     getNextExecTimeout() {
-        return 25000;//Check each 25 seconds
+        return this.timeout;//Check each 25 seconds
     }
 }
 
