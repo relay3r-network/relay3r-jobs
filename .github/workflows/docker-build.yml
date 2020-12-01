@@ -13,12 +13,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Push app to GitHub Packages
-        uses: docker/build-push-action@v1
-        with:
-          path: .
-          dockerfile: ./dockerfile
-          username: ${{ github.actor }}
-          password: ${{ secrets.REGISTRY_TOKEN }}
-          registry: docker.pkg.github.com
-          repository: hovoh/relay3r-jobs/node
-          tag_with_ref: true
+      uses: docker/build-push-action@v1
+      with:
+        path: .
+        dockerfile: ./dockerfile
+        username: ${{ github.actor }}
+        password: ${{ secrets.REGISTRY_TOKEN }}
+        registry: docker.pkg.github.com
+        repository: hovoh/relay3r-jobs/node
+        tag_with_ref: true
