@@ -2,9 +2,9 @@ name: Docker build and publish image
 
 on:
   push:
-    branches: [ actions ]
+    branches: [ new-combined ]
   pull_request:
-    branches: [ actions ]
+    branches: [ new-combined ]
 jobs:
   docker-build-and-push:
 
@@ -20,5 +20,5 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.REGISTRY_TOKEN }}
         registry: docker.pkg.github.com
-        repository: hovoh/relay3r-jobs/node
+        repository: relay3r-network/relay3r-jobs/node
         tag_with_ref: true
