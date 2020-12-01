@@ -1,5 +1,5 @@
 const config = {
-    address: "0x02b564BFFD15d5D1eD675Cc51470d4e7a6eC4D0b",
+    address: "0xfeF626E389f8402d3CFD1fAb205Fb5a3DD5c6988",
     abi: [
       "function work (  ) external",
       "function workable (  ) external view returns ( bool )",
