@@ -1,9 +1,12 @@
-FROM node:12.19.0-alpine3.12
+FROM node:12.19.0
 
-RUN apk update && apk upgrade && apk add bash
+RUN apt-get update && \
+    apt-get install -y dos2unix
 
 COPY . /relayer
 WORKDIR /relayer
+
+RUN dos2unix ./dockerentry
 RUN npm i
 
 ENTRYPOINT ["bash", "dockerentry"]

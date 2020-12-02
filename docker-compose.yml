@@ -2,6 +2,7 @@ version: "3.3"
 services:
   relayer:
     build: .
-    restart: always
+    restart: "no"
     volumes:
-      - ".env:/relayer/.env"
+      - "./.env:/relayer/.env"
+      - "./wallets/:/relayer/wallets/"

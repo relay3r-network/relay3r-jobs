@@ -1,17 +1,17 @@
-const {JobExecutor} = require("./jobs/JobExecutor");
+const { JobExecutor } = require("./jobs/JobExecutor");
 // Relayer jobs
-const {CoreFlashArbRelayerJob} = require("./jobs/relayer/CoreFlashArbRelayerJob");
-const {UnitradeRelayerJob} = require("./jobs/relayer/UnitradeRelayerJob");
-const {UniswapV2SlidingOracleJob} = require("./jobs/relayer/UniswapV2SlidingOracleJob");
-const {GetBackETHRelayerJob} = require("./jobs/relayer/GetBackETHRelayerJob");
-const {BACFarmerRelayerJob} = require("./jobs/relayer/BACFarmerRelayerv2Job");
+const { CoreFlashArbRelayerJob } = require("./jobs/relayer/CoreFlashArbRelayerJob");
+const { UnitradeRelayerJob } = require("./jobs/relayer/UnitradeRelayerJob");
+const { UniswapV2SlidingOracleJob } = require("./jobs/relayer/UniswapV2SlidingOracleJob");
+const { GetBackETHRelayerJob } = require("./jobs/relayer/GetBackETHRelayerJob");
+const { BACFarmerRelayerJob } = require("./jobs/relayer/BACFarmerRelayerJob");
 
 //Keeper jobs
-const {HegicPoolKeeperJob} = require("./jobs/keeper/HegicPoolKeeperJob");
-const {YearnV1EarnKeeperJob} = require("./jobs/keeper/YearnV1EarnKeeperJob");
-const {Keep3rV1OracleJob} = require("./jobs/keeper/Keep3rV1OracleJob");
-const {DForceStrategyKeep3rJob} = require("./jobs/keeper/DForceStrategyKeep3rJob");
-const {CrvStrategyKeep3rJob} = require("./jobs/keeper/CrvStrategyKeep3rJob");
+const { HegicPoolKeeperJob } = require("./jobs/keeper/HegicPoolKeeperJob");
+const { YearnV1EarnKeeperJob } = require("./jobs/keeper/YearnV1EarnKeeperJob");
+const { Keep3rV1OracleJob } = require("./jobs/keeper/Keep3rV1OracleJob");
+const { DForceStrategyKeep3rJob } = require("./jobs/keeper/DForceStrategyKeep3rJob");
+const { CrvStrategyKeep3rJob } = require("./jobs/keeper/CrvStrategyKeep3rJob");
 
 const { Logger } = require("./helper/logger");
 
@@ -27,7 +27,7 @@ class JobHandler {
         this.log = Logger("JobHandler");
     }
 
-    registerAvailableJobs(){
+    registerAvailableJobs() {
         this.availableJobs.push(
             //Relayer jobs
             this.createJob(UniswapV2SlidingOracleJob),
@@ -45,22 +45,22 @@ class JobHandler {
 
     }
 
-    createJob(jobClass){
+    createJob(jobClass) {
         return new jobClass(this.account, this.provider);
     }
 
     start(jobName) {
         const job = this.availableJobs
             .find(job => job.name.toLowerCase() === jobName.toLowerCase());
-        if (job){
-            if (!this.isStarted(jobName)){
+        if (job) {
+            if (!this.isStarted(jobName)) {
                 try {
                     const jobExecutor = new JobExecutor(job, this.provider);
                     jobExecutor.start();
                     this.runningJobs.push(jobExecutor);
                     this.log.info(`${job.name} is started`);
                     this.updateJobTimeout();
-                } catch (error){
+                } catch (error) {
                     this.log.error(`Couldn't start ${job.name}: ${error}`);
                 }
             } else {
@@ -74,21 +74,21 @@ class JobHandler {
     updateJobTimeout() {
         const msInADay = 86400000;
         const callNeededToRunAllJobsOnce = (2 * this.runningJobs.length);
-        const numberOfRuns = this.maxProviderCall/callNeededToRunAllJobsOnce
-        const newTimeout = msInADay/numberOfRuns;
+        const numberOfRuns = this.maxProviderCall / callNeededToRunAllJobsOnce
+        const newTimeout = msInADay / numberOfRuns;
         this.runningJobs.forEach(job => job.timeout = newTimeout);
     }
 
-    isStarted(jobName){
+    isStarted(jobName) {
         return !!this.getExecutor(jobName);
     }
 
-    getExecutor(jobName){
+    getExecutor(jobName) {
         return this.runningJobs
             .find(executor => executor.job.name.toLowerCase() === jobName.toLowerCase());
     }
 
-    stop(jobName){
+    stop(jobName) {
         const executor = this.getExecutor(jobName);
         if (executor) {
             executor.stop();
