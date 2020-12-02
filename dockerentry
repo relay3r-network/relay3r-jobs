@@ -1,4 +1,5 @@
 #!/bin/bash
+dos2unix -n .env unix.env
 while read line; do
 
     IFS='=' read -ra envVar <<< $line;
@@ -14,11 +15,11 @@ while read line; do
             mkdir -p wallets
             mv "walletGenerated" "wallets/$filename"
             echo "Wallet's mnemonic saved to: "$filename;
-            sed -i 's/^MNEMONIC=$/MNEMONIC='"$mnemonic"'/gm' .env
+            sed 's/^MNEMONIC=$/MNEMONIC='"$mnemonic"'/gm' unix.env > .env
             break;
         fi
     fi
-
 done < .env
+
 
 npm start
