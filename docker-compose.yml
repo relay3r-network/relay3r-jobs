@@ -4,5 +4,5 @@ services:
     build: .
     restart: "no"
     volumes:
-      - "./node.env:/relayer/.env"
+      - "./.env:/relayer/.env"
       - "./wallets/:/relayer/wallets/"
