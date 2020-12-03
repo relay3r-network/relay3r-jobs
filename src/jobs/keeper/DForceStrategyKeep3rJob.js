@@ -19,7 +19,8 @@ class DForceStrategyKeep3rJob extends Job {
     isWorkable = async () =>{
         try {
             for(let i=0;i<this.strategies.length;i++) {
-                if(await this.contract.workable(this.strategies[i]))
+                let harvestable = await this.contract.workable(this.strategies[i])
+                if(harvestable)
                     this.workableStrats.push(this.strategies[i]);
             }
             return this.workableStrats > 0;
