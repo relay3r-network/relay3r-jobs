@@ -21,9 +21,9 @@ class MMStrategyKeeperV1Job extends Job {
     isWorkable = async () =>{
         try {
             for(let i=0;i<this.strategies.length;i++) {
-                if(await this.contract.harvestable(this.strategies[i]))
+                if(await this.contract.callStatic.harvestable(this.strategies[i]))
                     this.workableStrats.push(this.strategies[i]);
-                else this.log.info(`Strat ${i} is not workable` );
+                // else this.log.info(`Strat ${i} is not harvestable` );
             }
             return this.workableStrats > 0;
         } catch (error) {
