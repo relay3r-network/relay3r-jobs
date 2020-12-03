@@ -19,7 +19,7 @@ class UnitradeRelayerJob extends Job {
                 gasPrice: gas * 1e9,
             });
         else
-            return await this.contract.workSolo(this.orderList, {
+            return await this.contract.workSolo(this.orderList[0], {
                 gasPrice: gas * 1e9,
             });
     }
