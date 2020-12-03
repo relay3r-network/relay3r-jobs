@@ -1,5 +1,5 @@
 const config = {
-    address: "0xaeDC35E4307E1e3eE6d35AF3A69eCA01542D7cea",
+    address: "0x7A2369056c20270778651cba53F5A860ed2E29Cc",
     abi: [
         "function hasMostProfitableStrat () external view returns (bool)",
         "function getMostProfitableStratWithToken () external view returns ( uint256, address )",
