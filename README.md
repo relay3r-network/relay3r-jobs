@@ -19,6 +19,7 @@ This repo contains everything you need to run be a Relayer.
 - HegicPoolKeeper
 - Keep3rV1Oracle
 - YearnV1Keeper
+- MMStrategyKeeperV1
 
 ## Getting started
 
