@@ -11,6 +11,7 @@ This repo contains everything you need to run be a Relayer.
 - UniswapV2SlidingOracle
 - UnitradeRelayer
 - BACFarmerRelayer
+- RelayerV1Oracle
 
 ### [Keep3r](https://keep3r.network/)
 
@@ -36,7 +37,7 @@ Default .env:
 ```
 MNEMONIC=
 INFURA_PROJECT_ID=
-JOBS=UniswapV2SlidingOracle,UnitradeRelay3r
+JOBS=UniswapV2SlidingOracle,UnitradeRelayer
 ```
 - If you want to use an existing wallet set your MNEMONIC in the .env
 - Get an Infura Project Id from [Infura](https://infura.io/dashboard) and set it to INFURA_PROJECT_ID key
