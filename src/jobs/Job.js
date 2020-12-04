@@ -28,7 +28,7 @@ class Job {
     }
 
     async getGas(){
-        return (await getCurrentGasPrices()).high + 7
+        return (await getCurrentGasPrices()).high + 3
     }
 
     async work(){
