@@ -10,6 +10,14 @@ class RelayerV1OracleJob extends Job {
             provider
         );
     }
+
+    async callWork(gas){
+        return await this.contract.work({
+                gasPrice: gas * 1e9,
+                gasLimit:7000000
+        })
+    }
+
 }
 
 exports.RelayerV1OracleJob = RelayerV1OracleJob;
