@@ -8,7 +8,6 @@ This repo contains everything you need to run be a Relayer.
 
 - CoreFlashArbRelayer
 - GetBackETHRelayer
-- UniswapV2SlidingOracle
 - UnitradeRelayer
 - BACFarmerRelayer
 - RelayerV1Oracle
@@ -37,7 +36,7 @@ Default .env:
 ```
 MNEMONIC=
 INFURA_PROJECT_ID=
-JOBS=UniswapV2SlidingOracle,UnitradeRelayer
+JOBS=RelayerV1Oracle,UnitradeRelayer
 ```
 - If you want to use an existing wallet set your MNEMONIC in the .env
 - Get an Infura Project Id from [Infura](https://infura.io/dashboard) and set it to INFURA_PROJECT_ID key

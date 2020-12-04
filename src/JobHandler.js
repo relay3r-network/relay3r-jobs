@@ -2,7 +2,6 @@ const { JobExecutor } = require("./jobs/JobExecutor");
 // Relayer jobs
 const { CoreFlashArbRelayerJob } = require("./jobs/relayer/CoreFlashArbRelayerJob");
 const { UnitradeRelayerJob } = require("./jobs/relayer/UnitradeRelayerJob");
-const { UniswapV2SlidingOracleJob } = require("./jobs/relayer/UniswapV2SlidingOracleJob");
 const { GetBackETHRelayerJob } = require("./jobs/relayer/GetBackETHRelayerJob");
 const { BACFarmerRelayerJob } = require("./jobs/relayer/BACFarmerRelayerJob");
 const { RelayerV1OracleJob } = require("./jobs/relayer/RelayerV1OracleJob");
@@ -32,7 +31,6 @@ class JobHandler {
     registerAvailableJobs() {
         this.availableJobs.push(
             //Relayer jobs
-            this.createJob(UniswapV2SlidingOracleJob),
             this.createJob(UnitradeRelayerJob),
             this.createJob(CoreFlashArbRelayerJob),
             this.createJob(GetBackETHRelayerJob),
