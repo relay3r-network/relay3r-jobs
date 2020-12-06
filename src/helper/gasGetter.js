@@ -2,12 +2,8 @@ const axios = require("axios");
 
 exports.getCurrentGasPrices = async () => {
   let response = await axios.get(
-    "https://ethgasstation.info/json/ethgasAPI.json"
+    "https://www.gasnow.org/api/v3/gas/price?utm_source=relayerjobs"
   );
-  let prices = {
-    low: response.data.safeLow / 10,
-    medium: response.data.average / 10,
-    high: response.data.fast / 10,
-  };
+  let prices = response.data;
   return prices;
 };

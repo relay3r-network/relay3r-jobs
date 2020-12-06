@@ -34,7 +34,7 @@ class DForceStrategyKeep3rJob extends Job {
         try{
             for(let i=0;i<this.workableStrats.length;i++) {
                 return await this.contract.harvest(this.workableStrats[i],{
-                    gasPrice: gas * 1e9,
+                    gasPrice: gas,
                 })
             }
         }

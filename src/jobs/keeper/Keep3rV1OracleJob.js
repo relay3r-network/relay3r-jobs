@@ -13,7 +13,7 @@ class Keep3rV1OracleJob extends Job {
 
     async callWork(gas){
         return await this.contract.work({
-                gasPrice: gas * 1e9,
+                gasPrice: gas,
                 gasLimit:7000000
         })
     }

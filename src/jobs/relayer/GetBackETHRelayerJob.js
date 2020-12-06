@@ -33,11 +33,11 @@ class GetBackETHRelayerJob extends Job {
     async callWork(gas){
         if(this.workableIndex == 1)
             return await this.contract.clearQueue({
-                gasPrice: gas * 1e9,
+                gasPrice: gas,
             });
         else
             return await this.contract.executeSwap({
-                gasPrice: gas * 1e9,
+                gasPrice: gas,
             });
     }
 

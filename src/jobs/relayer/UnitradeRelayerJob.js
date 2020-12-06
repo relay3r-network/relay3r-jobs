@@ -16,11 +16,11 @@ class UnitradeRelayerJob extends Job {
         this.log.info(`Executing orders ${this.orderList.toString()}`);
         if(this.orderList.length > 1)
             return await this.contract.workBatch(this.orderList, {
-                gasPrice: gas * 1e9,
+                gasPrice: gas,
             });
         else
             return await this.contract.workSolo(this.orderList[0], {
-                gasPrice: gas * 1e9,
+                gasPrice: gas,
             });
     }
 }
