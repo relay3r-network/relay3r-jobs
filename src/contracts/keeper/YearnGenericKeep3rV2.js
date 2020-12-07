@@ -2,6 +2,8 @@ const config = {
   address: "0x13dAda6157Fee283723c0254F43FF1FdADe4EEd6",
   abi: [
     "function strategies() external view  returns (address[] memory _strategies)",
+    "function requiredHarvest (address) external view returns (uint256)",
+    "function requiredTend (address) external view returns (uint256)",
     "function harvestable(address _strategy) external view returns (bool)",
     "function harvest(address _strategy) external",
     "function tendable(address _strategy) external view returns (bool)",

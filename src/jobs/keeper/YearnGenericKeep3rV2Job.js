@@ -14,11 +14,8 @@ class YearnGenericKeep3rV2Job extends Job {
     this.harvestableStrats = [];
     this.tendableStrats = [];
     this.workable = false;
-    this.skipTendableCheck = [
-      "0x879B28502223C4F97Fd38dEad123cb7a0214486B",
-      "0x4f8140Df266158d6D98Ae16B69ABcc8c17b9b79e",
-    ];
   }
+
   containsStringInarray(arr, str) {
     return new RegExp(arr.join("|")).test(str);
   }
@@ -29,14 +26,13 @@ class YearnGenericKeep3rV2Job extends Job {
       this.strategies = await this.contract.strategies();
       for (let i = 0; i < this.strategies.length; i++) {
         let currStrat = this.strategies[i];
-        let harvestable = await this.contract.callStatic.harvestable(currStrat);
-        if (harvestable) {
-          this.harvestableStrats.push(currStrat);
-        }
-        if (this.containsStringInarray(this.skipTendableCheck, currStrat))
-          continue;
-
-        let tendable = await this.contract.callStatic.tendable(currStrat);
+        let harvestable =
+          (await this.contract.callStatic.requiredHarvest(currStrat)) > 0 &&
+          (await this.contract.callStatic.harvestable(currStrat));
+        if (harvestable) this.harvestableStrats.push(currStrat);
+        let tendable =
+          (await this.contract.callStatic.requiredTend(currStrat)) > 0 &&
+          (await this.contract.callStatic.tendable(currStrat));
         if (tendable) {
           this.tendableStrats.push(currStrat);
         }
