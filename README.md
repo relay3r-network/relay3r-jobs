@@ -34,11 +34,13 @@ If you are running the relayer on a Linux server, you will have to install docke
 - Rename the file env.example to .env
 
 Default .env:
+
 ```
 MNEMONIC=
 INFURA_PROJECT_ID=
 JOBS=RelayerV1Oracle,UnitradeRelayer
 ```
+
 - If you want to use an existing wallet set your MNEMONIC in the .env
 - Get an Infura Project Id from [Infura](https://infura.io/dashboard) and set it to INFURA_PROJECT_ID key
 - Set the jobs you want to work on in the .env, concat the names with comma. Refer to the "Available Jobs" section for the names.
