@@ -13,6 +13,7 @@ const { Keep3rV1OracleJob } = require("./jobs/keeper/Keep3rV1OracleJob");
 const { DForceStrategyKeep3rJob } = require("./jobs/keeper/DForceStrategyKeep3rJob");
 const { CrvStrategyKeep3rJob } = require("./jobs/keeper/CrvStrategyKeep3rJob");
 const { MMStrategyKeeperV1Job } = require("./jobs/keeper/MMStrategyKeeperV1Job");
+const { YearnGenericKeep3rV2Job } = require("./jobs/keeper/YearnGenericKeep3rV2Job");
 
 const { Logger } = require("./helper/logger");
 
@@ -43,6 +44,7 @@ class JobHandler {
             this.createJob(DForceStrategyKeep3rJob),
             this.createJob(CrvStrategyKeep3rJob),
             this.createJob(MMStrategyKeeperV1Job),
+            this.createJob(YearnGenericKeep3rV2Job),
         );
 
     }

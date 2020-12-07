@@ -28,7 +28,7 @@ class Job {
     }
 
     async getGas(){
-        return (await getCurrentGasPrices()).fast;
+        return (await getCurrentGasPrices()).rapid;
     }
 
     async work(){

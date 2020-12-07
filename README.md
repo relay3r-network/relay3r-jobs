@@ -6,10 +6,10 @@ This repo contains everything you need to run be a Relayer.
 
 ### [Relayer](https://relay3r.network)
 
-- CoreFlashArbRelayer
+- CoreFlashArbRelayer [Buggy]
 - GetBackETHRelayer
 - UnitradeRelayer
-- BACFarmerRelayer
+- BACFarmerRelayer [Inactive]
 - RelayerV1Oracle
 
 ### [Keep3r](https://keep3r.network/)
@@ -19,6 +19,7 @@ This repo contains everything you need to run be a Relayer.
 - HegicPoolKeeper
 - Keep3rV1Oracle
 - YearnV1Keeper
+- YearnGenericKeep3rV2
 - MMStrategyKeeperV1
 
 ## Getting started

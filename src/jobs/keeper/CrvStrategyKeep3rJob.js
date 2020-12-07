@@ -15,6 +15,7 @@ class CrvStrategyKeep3rJob extends Job {
             "0x6D6c1AD13A5000148Aa087E7CbFb53D402c81341",//StrategyCurveBTCVoterProxy
             "0xC59601F0CC49baa266891b7fc63d2D5FE097A79D",//StrategyCurve3CrvVoterProxy
         ]
+        this.stratNames = ["StrategyCurveYVoterProxy","StrategyCurveBUSDVoterProxy","StrategyCurveBTCVoterProxy","StrategyCurve3CrvVoterProxy"]
         this.workableStrats = []
         this.workable = false;
     }
@@ -22,10 +23,12 @@ class CrvStrategyKeep3rJob extends Job {
         try {
             for(let i=0;i<this.strategies.length;i++) {
                 let harvestable = await this.contract.workable(this.strategies[i])
-                if(harvestable)
+                if(harvestable){
                     this.workableStrats.push(this.strategies[i]);
+                    this.log.info(`Strat ${this.stratNames[i]} is harvestable`)
+                }
             }
-            return this.workableStrats > 0;
+            return this.workableStrats.length > 0;
         } catch (error) {
             this.log.error("Error evaluating if workable:"+ error);
         }
