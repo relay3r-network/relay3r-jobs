@@ -1,8 +1,6 @@
 const { JobExecutor } = require("./jobs/JobExecutor");
 // Relayer jobs
-const {
-  CoreFlashArbRelayerJob,
-} = require("./jobs/relayer/CoreFlashArbRelayerJob");
+const { CoreFlashArbRelayerJob } = require("./jobs/relayer/CoreFlashArbRelayerJob");
 const { UnitradeRelayerJob } = require("./jobs/relayer/UnitradeRelayerJob");
 const { GetBackETHRelayerJob } = require("./jobs/relayer/GetBackETHRelayerJob");
 const { BACFarmerRelayerJob } = require("./jobs/relayer/BACFarmerRelayerJob");
@@ -12,16 +10,11 @@ const { RelayerV1OracleJob } = require("./jobs/relayer/RelayerV1OracleJob");
 const { HegicPoolKeeperJob } = require("./jobs/keeper/HegicPoolKeeperJob");
 const { YearnV1EarnKeeperJob } = require("./jobs/keeper/YearnV1EarnKeeperJob");
 const { Keep3rV1OracleJob } = require("./jobs/keeper/Keep3rV1OracleJob");
-const {
-  DForceStrategyKeep3rJob,
-} = require("./jobs/keeper/DForceStrategyKeep3rJob");
+const { DForceStrategyKeep3rJob } = require("./jobs/keeper/DForceStrategyKeep3rJob");
 const { CrvStrategyKeep3rJob } = require("./jobs/keeper/CrvStrategyKeep3rJob");
-const {
-  MMStrategyKeeperV1Job,
-} = require("./jobs/keeper/MMStrategyKeeperV1Job");
-const {
-  YearnGenericKeep3rV2Job,
-} = require("./jobs/keeper/YearnGenericKeep3rV2Job");
+const { MMStrategyKeeperV1Job } = require("./jobs/keeper/MMStrategyKeeperV1Job");
+const { YearnGenericKeep3rV2Job } = require("./jobs/keeper/YearnGenericKeep3rV2Job");
+const { SushiswapV1OracleJob } = require("./jobs/keeper/SushiswapV1OracleJob");
 
 const { Logger } = require("./helper/logger");
 
@@ -51,7 +44,8 @@ class JobHandler {
       this.createJob(DForceStrategyKeep3rJob),
       this.createJob(CrvStrategyKeep3rJob),
       this.createJob(MMStrategyKeeperV1Job),
-      this.createJob(YearnGenericKeep3rV2Job)
+      this.createJob(YearnGenericKeep3rV2Job),
+      this.createJob(SushiswapV1OracleJob),
     );
   }
 

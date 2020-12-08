@@ -21,6 +21,7 @@ This repo contains everything you need to run be a Relayer.
 - YearnV1Keeper
 - YearnGenericKeep3rV2
 - MMStrategyKeeperV1
+- SushiswapV1Oracle
 
 ## Getting started
 
