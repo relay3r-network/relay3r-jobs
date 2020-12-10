@@ -6,10 +6,10 @@ This repo contains everything you need to run be a Relayer.
 
 ### [Relayer](https://relay3r.network)
 
-- CoreFlashArbRelayer [Buggy]
+<!-- - CoreFlashArbRelayer [Buggy] -->
 - GetBackETHRelayer
 - UnitradeRelayer
-- BACFarmerRelayer [Inactive]
+<!-- - BACFarmerRelayer [Inactive] -->
 - RelayerV1Oracle
 
 ### [Keep3r](https://keep3r.network/)

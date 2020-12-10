@@ -1,9 +1,12 @@
 const { JobExecutor } = require("./jobs/JobExecutor");
 // Relayer jobs
+/*
+Inactive Relayer Jobs
 const { CoreFlashArbRelayerJob } = require("./jobs/relayer/CoreFlashArbRelayerJob");
+const { BACFarmerRelayerJob } = require("./jobs/relayer/BACFarmerRelayerJob");
+*/
 const { UnitradeRelayerJob } = require("./jobs/relayer/UnitradeRelayerJob");
 const { GetBackETHRelayerJob } = require("./jobs/relayer/GetBackETHRelayerJob");
-const { BACFarmerRelayerJob } = require("./jobs/relayer/BACFarmerRelayerJob");
 const { RelayerV1OracleJob } = require("./jobs/relayer/RelayerV1OracleJob");
 
 //Keeper jobs
@@ -32,10 +35,12 @@ class JobHandler {
   registerAvailableJobs() {
     this.availableJobs.push(
       //Relayer jobs
-      this.createJob(UnitradeRelayerJob),
+      /* Inactive Relayer jobs
       this.createJob(CoreFlashArbRelayerJob),
-      this.createJob(GetBackETHRelayerJob),
       this.createJob(BACFarmerRelayerJob),
+      */
+      this.createJob(UnitradeRelayerJob),
+      this.createJob(GetBackETHRelayerJob),
       this.createJob(RelayerV1OracleJob),
       //Keeper jobs
       this.createJob(HegicPoolKeeperJob),
