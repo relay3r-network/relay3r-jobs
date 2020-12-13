@@ -14,7 +14,8 @@ class RelayerV1OracleJob extends Job {
 
   async callWork(gas) {
     return await this.contract.work({
-      gasPrice: gas
+      gasPrice: gas,
+      gasLimit:2000000
     });
   }
 }
