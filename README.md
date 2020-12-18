@@ -11,6 +11,7 @@ This repo contains everything you need to run be a Relayer.
 - UnitradeRelayer
 <!-- - BACFarmerRelayer [Inactive] -->
 - RelayerV1Oracle
+- SynlRebalancer
 
 ### [Keep3r](https://keep3r.network/)
 
