@@ -3,7 +3,7 @@ const ethers = require("ethers");
 
 const contract = require("../../contracts/relayer/SynlRebalancer.js");
 
-class RelayerV1OracleJob extends Job {
+class SynlRebalancerJob extends Job {
   constructor(account, provider) {
     super(
       "SynlRebalancer",
@@ -13,4 +13,4 @@ class RelayerV1OracleJob extends Job {
   }
 }
 
-exports.RelayerV1OracleJob = RelayerV1OracleJob;
+exports.SynlRebalancerJob = SynlRebalancerJob;

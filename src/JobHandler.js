@@ -8,6 +8,7 @@ const { BACFarmerRelayerJob } = require("./jobs/relayer/BACFarmerRelayerJob");
 const { UnitradeRelayerJob } = require("./jobs/relayer/UnitradeRelayerJob");
 const { GetBackETHRelayerJob } = require("./jobs/relayer/GetBackETHRelayerJob");
 const { RelayerV1OracleJob } = require("./jobs/relayer/RelayerV1OracleJob");
+const { SynlRebalancerJob } = require("./jobs/relayer/SynlRebalancerJob");
 
 //Keeper jobs
 const { HegicPoolKeeperJob } = require("./jobs/keeper/HegicPoolKeeperJob");
@@ -42,6 +43,7 @@ class JobHandler {
       this.createJob(UnitradeRelayerJob),
       this.createJob(GetBackETHRelayerJob),
       this.createJob(RelayerV1OracleJob),
+      this.createJob(SynlRebalancerJob),
       //Keeper jobs
       this.createJob(HegicPoolKeeperJob),
       this.createJob(YearnV1EarnKeeperJob),
