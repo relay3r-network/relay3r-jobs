@@ -1,6 +1,6 @@
 const StandardJobABI = require("../../constants/StandardJobABI");
 const config = {
-  address: "0x8CCAE8392D251d4AcCb2174108A94B4847f17780",
+  address: "0x314BefDD09623AeDb1774d3DDEAABbf5C4D57d01",
   abi: StandardJobABI,
 };
 module.exports = config;
