@@ -44,7 +44,6 @@ class UnitradeRelayerJob extends Job {
   }
 
   async callWork(gas) {
-    await this.getExecutableFiltered();
     if(this.orderList.length > 0 )  {
       this.log.info(`Executing orders ${this.orderList.toString()}`);
       if (this.orderList.length > 1)
