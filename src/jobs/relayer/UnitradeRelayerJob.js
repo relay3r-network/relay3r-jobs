@@ -3,6 +3,9 @@ const ethers = require("ethers");
 
 const contract = require("../../contracts/relayer/unitraderelay3r.js");
 const DebugJob = true;
+Array.prototype.contains = function(element){
+  return this.indexOf(element) > -1;
+};
 class UnitradeRelayerJob extends Job {
   constructor(account, provider) {
     super(
@@ -10,12 +13,17 @@ class UnitradeRelayerJob extends Job {
       new ethers.Contract(contract.address, contract.abi, account),
       provider
     );
+    this.SkipOrders = [2076,1617,1805];
   }
 
   async getExecutableFiltered() {
     this.orderList = await this.contract.getExecutableOrdersList();
     //Now iterate and remove any that may not pass
     for(const order of this.orderList) {
+      if(this.SkipOrders.contains(parseInt(order))){
+        this.orderList = this.orderList.filter(item => item !== order)
+        continue;
+      }
       try {
         await this.contract.callStatic.workSolo(order)
         if(DebugJob) this.log.info(`${order} is executable`)
