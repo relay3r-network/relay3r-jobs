@@ -1,4 +1,4 @@
 const config = {
-  address: "0x73353801921417F465377c8d898c6f4C0270282C"
+  address: "0x1EE5C83C4B43aaEd21613D5cc7835D36078ce03F"
 };
 module.exports = config;

@@ -54,7 +54,7 @@ class JobHandler {
       this.createJob(MMStrategyKeeperV1Job),
       this.createJob(YearnGenericKeep3rV2Job),
       this.createJob(SushiswapV1OracleJob),
-      // this.createJob(LidoKeep3rJob)
+      this.createJob(LidoKeep3rJob)
     );
   }
 
