@@ -4,11 +4,11 @@ const { JobExecutor } = require("./jobs/JobExecutor");
 Inactive Relayer Jobs
 const { CoreFlashArbRelayerJob } = require("./jobs/relayer/CoreFlashArbRelayerJob");
 const { BACFarmerRelayerJob } = require("./jobs/relayer/BACFarmerRelayerJob");
+const { SynlRebalancerJob } = require("./jobs/relayer/SynlRebalancerJob");
 */
 const { UnitradeRelayerJob } = require("./jobs/relayer/UnitradeRelayerJob");
 const { GetBackETHRelayerJob } = require("./jobs/relayer/GetBackETHRelayerJob");
 const { RelayerV1OracleJob } = require("./jobs/relayer/RelayerV1OracleJob");
-const { SynlRebalancerJob } = require("./jobs/relayer/SynlRebalancerJob");
 
 //Keeper jobs
 const { HegicPoolKeeperJob } = require("./jobs/keeper/HegicPoolKeeperJob");
@@ -19,6 +19,7 @@ const { CrvStrategyKeep3rJob } = require("./jobs/keeper/CrvStrategyKeep3rJob");
 const { MMStrategyKeeperV1Job } = require("./jobs/keeper/MMStrategyKeeperV1Job");
 const { YearnGenericKeep3rV2Job } = require("./jobs/keeper/YearnGenericKeep3rV2Job");
 const { SushiswapV1OracleJob } = require("./jobs/keeper/SushiswapV1OracleJob");
+const { LidoKeep3rJob } = require("./jobs/keeper/LidoKeep3rJob");
 
 const { Logger } = require("./helper/logger");
 
@@ -39,11 +40,11 @@ class JobHandler {
       /* Inactive Relayer jobs
       this.createJob(CoreFlashArbRelayerJob),
       this.createJob(BACFarmerRelayerJob),
+      this.createJob(SynlRebalancerJob),
       */
       this.createJob(UnitradeRelayerJob),
       this.createJob(GetBackETHRelayerJob),
       this.createJob(RelayerV1OracleJob),
-      this.createJob(SynlRebalancerJob),
       //Keeper jobs
       this.createJob(HegicPoolKeeperJob),
       this.createJob(YearnV1EarnKeeperJob),
@@ -53,6 +54,7 @@ class JobHandler {
       this.createJob(MMStrategyKeeperV1Job),
       this.createJob(YearnGenericKeep3rV2Job),
       this.createJob(SushiswapV1OracleJob),
+      // this.createJob(LidoKeep3rJob)
     );
   }
 

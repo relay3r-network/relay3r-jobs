@@ -5,13 +5,9 @@ This repo contains everything you need to run be a Relayer.
 ## Available Jobs
 
 ### [Relayer](https://relay3r.network)
-
-<!-- - CoreFlashArbRelayer [Buggy] -->
 - GetBackETHRelayer
 - UnitradeRelayer
-<!-- - BACFarmerRelayer [Inactive] -->
 - RelayerV1Oracle
-- SynlRebalancer
 
 ### [Keep3r](https://keep3r.network/)
 
@@ -23,6 +19,7 @@ This repo contains everything you need to run be a Relayer.
 - YearnGenericKeep3rV2
 - MMStrategyKeeperV1
 - SushiswapV1Oracle
+- LidoKeep3r
 
 ## Getting started
 

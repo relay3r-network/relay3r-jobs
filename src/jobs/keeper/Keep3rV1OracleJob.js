@@ -1,5 +1,6 @@
 const { Job } = require("../Job");
 const ethers = require("ethers");
+const StandardJobABI = require("../../constants/StandardJobABI");
 
 const contract = require("../../contracts/keeper/Keep3rV1Oracle.js");
 
@@ -7,7 +8,7 @@ class Keep3rV1OracleJob extends Job {
   constructor(account, provider) {
     super(
       "Keep3rV1Oracle",
-      new ethers.Contract(contract.address, contract.abi, account),
+      new ethers.Contract(contract.address, StandardJobABI, account),
       provider
     );
   }

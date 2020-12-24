@@ -2,12 +2,12 @@ const { Job } = require("../Job");
 const ethers = require("ethers");
 const StandardJobABI = require("../../constants/StandardJobABI");
 
-const contract = require("../../contracts/keeper/SushiswapV1Oracle.js");
+const contract = require("../../contracts/keeper/LidoKeep3r.js");
 
-class SushiswapV1OracleJob extends Job {
+class LidoKeep3rJob extends Job {
   constructor(account, provider) {
     super(
-      "SushiswapV1Oracle",
+      "LidoKeep3r",
       new ethers.Contract(contract.address, StandardJobABI, account),
       provider
     );
@@ -21,4 +21,4 @@ class SushiswapV1OracleJob extends Job {
   }
 }
 
-exports.SushiswapV1OracleJob = SushiswapV1OracleJob;
+exports.LidoKeep3rJob = LidoKeep3rJob;
