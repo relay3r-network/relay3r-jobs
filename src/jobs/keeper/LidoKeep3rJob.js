@@ -15,8 +15,7 @@ class LidoKeep3rJob extends Job {
 
   async callWork(gas) {
     return await this.contract.work({
-      gasPrice: gas,
-      gasLimit: 7000000,
+      gasPrice: gas
     });
   }
 }
