@@ -4,6 +4,6 @@ exports.getCurrentGasPrices = async () => {
   let response = await axios.get(
     "https://www.gasnow.org/api/v3/gas/price?utm_source=relayerjobs"
   );
-  let prices = response.data;
+  let prices = response.data.data;
   return prices;
 };

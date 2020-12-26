@@ -38,8 +38,9 @@ Default .env:
 MNEMONIC=
 INFURA_PROJECT_ID=
 JOBS=RelayerV1Oracle,UnitradeRelayer
+GAS_INCREASE=
 ```
-
+- GAS_INCREASE arg is in GWEI,if you want to add 1 gwei to the rapid gas price set GAS_INCREASE in .env file to 1.Do not enter wei amounts for GAS_INCREASE
 - If you want to use an existing wallet set your MNEMONIC in the .env
 - Get an Infura Project Id from [Infura](https://infura.io/dashboard) and set it to INFURA_PROJECT_ID key
 - Set the jobs you want to work on in the .env, concat the names with comma. Refer to the "Available Jobs" section for the names.

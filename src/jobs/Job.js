@@ -1,3 +1,4 @@
+const { env } = require("../env");
 const { getCurrentGasPrices } = require("../helper/gasGetter");
 const { Logger } = require("../helper/logger");
 
@@ -8,6 +9,7 @@ class Job {
     this.name = jobName;
     this.log = Logger(jobName);
     this.provider = provider;
+    this.gasIncrease = env.GAS_INCREASE ? env.GAS_INCREASE * 1e9 : 0;
     this.timeout = 25000;
   }
 
@@ -28,7 +30,8 @@ class Job {
   }
 
   async getGas() {
-    return (await getCurrentGasPrices()).rapid;
+    let gasdata = await getCurrentGasPrices()
+    return gasdata.rapid + this.gasIncrease;
   }
 
   async work() {
