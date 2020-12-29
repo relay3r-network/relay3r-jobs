@@ -1,5 +1,5 @@
 const config = {
-  address: "0xee334356dF4F75a3902346c88a819cDE41F896E6",
+  address: "0x55C5C6dd599e11391559A7cAC1AB5F04A2401b3f",
   abi: [
     "function workBatch (uint[] memory orderList) external",
     "function workSolo (uint order) external",

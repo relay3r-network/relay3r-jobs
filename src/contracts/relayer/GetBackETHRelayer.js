@@ -1,5 +1,5 @@
 const config = {
-  address: "0x820aeB9dBA9E5191F2275e8aCf6Aa0ADcf6A84Ff",
+  address: "0x3Ed0E7a0596183200ab1dAaD95dD6E01a070913C",
   abi: [
     "function workableQueue (  ) external view returns ( bool )",
     "function workableSwap (  ) external view returns ( bool )",
