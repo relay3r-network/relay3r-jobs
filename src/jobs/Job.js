@@ -31,7 +31,7 @@ class Job {
 
   async getGas() {
     let gasdata = await getCurrentGasPrices()
-    return gasdata.rapid + this.gasIncrease;
+    return gasdata.fast + this.gasIncrease;
   }
 
   async work() {
