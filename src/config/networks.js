@@ -1,8 +1,8 @@
 exports.contracts = {
   keeper: {
-    address: "0x1ceb5cb57c4d4e2b2433641b95dd330a33185a44",
+    address: "0x1cEB5cB57C4D4E2b2433641b95Dd330A33185A44",
   },
   relayer: {
-    address: "0x5b3F693EfD5710106eb2Eac839368364aCB5a70f",
+    address: "0x0E3EF895c59E7Db27214AB5bbf56347cE115A3f4",
   },
 };
