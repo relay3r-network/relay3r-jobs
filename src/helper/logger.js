@@ -16,7 +16,6 @@ const Logger = (prefix) => {
       console.log(this.format(msg, level));
     },
     format: function (msg, level) {
-      console.log(level);
       switch (this.levels[level]) {
         case this.levels.info:
           return `[${this.prefix}]${chalk.blue(

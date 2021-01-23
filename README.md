@@ -22,6 +22,7 @@ This repo contains everything you need to run be a Relayer.
 - SushiswapV1Oracle
 - LidoKeep3r
 - YearnLiquidationKeep3r
+- VaultKeep3r
 
 # Jobs minkeep requirements :
 

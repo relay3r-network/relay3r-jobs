@@ -8,22 +8,14 @@ const { RelayerV1OracleJob } = require("./jobs/relayer/RelayerV1OracleJob");
 const { HegicPoolKeeperJob } = require("./jobs/keeper/HegicPoolKeeperJob");
 const { YearnV1EarnKeeperJob } = require("./jobs/keeper/YearnV1EarnKeeperJob");
 const { Keep3rV1OracleJob } = require("./jobs/keeper/Keep3rV1OracleJob");
-const {
-  DForceStrategyKeep3rJob,
-} = require("./jobs/keeper/DForceStrategyKeep3rJob");
+const { DForceStrategyKeep3rJob } = require("./jobs/keeper/DForceStrategyKeep3rJob");
 const { CrvStrategyKeep3rJob } = require("./jobs/keeper/CrvStrategyKeep3rJob");
-const {
-  MMStrategyKeeperV1Job,
-} = require("./jobs/keeper/MMStrategyKeeperV1Job");
-const {
-  YearnGenericKeep3rV2Job,
-} = require("./jobs/keeper/YearnGenericKeep3rV2Job");
+const { MMStrategyKeeperV1Job } = require("./jobs/keeper/MMStrategyKeeperV1Job");
+const { YearnGenericKeep3rV2Job } = require("./jobs/keeper/YearnGenericKeep3rV2Job");
 const { SushiswapV1OracleJob } = require("./jobs/keeper/SushiswapV1OracleJob");
 const { LidoKeep3rJob } = require("./jobs/keeper/LidoKeep3rJob");
-const {
-  YearnLiquidationKeep3rJob,
-} = require("./jobs/keeper/YearnLiquidationKeep3rJob");
-
+const { YearnLiquidationKeep3rJob } = require("./jobs/keeper/YearnLiquidationKeep3rJob");
+const { VaultKeep3rJob } = require("./jobs/keeper/VaultKeep3rJob");
 const { Logger } = require("./helper/logger");
 
 class JobHandler {
@@ -58,7 +50,8 @@ class JobHandler {
       this.createJob(YearnGenericKeep3rV2Job),
       this.createJob(SushiswapV1OracleJob),
       this.createJob(LidoKeep3rJob),
-      this.createJob(YearnLiquidationKeep3rJob)
+      this.createJob(YearnLiquidationKeep3rJob),
+      this.createJob(VaultKeep3rJob)
     );
   }
 
