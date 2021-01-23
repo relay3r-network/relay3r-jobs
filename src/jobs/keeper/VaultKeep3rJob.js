@@ -23,7 +23,7 @@ class VaultKeep3rJob extends Job {
           this.vaults[i]
         );
         if (workable) this.workableVaults.push(this.vaults[i]);
-        // else this.log.info(`Strat ${i} is not workable` );
+        else this.log.info(`Strat ${i} is not workable` );
       }
       return this.workableVaults > 0;
     } catch (error) {
@@ -35,7 +35,7 @@ class VaultKeep3rJob extends Job {
   async callWork(gas) {
     try {
       for (let i = 0; i < this.workableVaults.length; i++) {
-        return await this.contract.harvest(this.workableVaults[i], {
+        return await this.contract.earn(this.workableVaults[i], {
           gasPrice: gas,
         });
       }
