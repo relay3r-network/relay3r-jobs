@@ -5,11 +5,13 @@ This repo contains everything you need to run be a Relayer.
 ## Available Jobs
 
 ### [Relayer](https://relay3r.network)
+
 - GetBackETHRelayer
 - UnitradeRelayer
 - RelayerV1Oracle
 
 ### [Keep3r](https://keep3r.network/)
+
 - CrvStrategyKeep3r
 - DForceStrategyKeep3r
 - HegicPoolKeeper
@@ -22,6 +24,7 @@ This repo contains everything you need to run be a Relayer.
 - YearnLiquidationKeep3r
 
 # Jobs minkeep requirements :
+
 - Keep3rV1Oracle - 200 KP3R
 - SushiswapV1Oracle - 200 KP3R
 - RelayerV1Oracle - 250 RLR
@@ -46,6 +49,7 @@ INFURA_PROJECT_ID=
 JOBS=RelayerV1Oracle,UnitradeRelayer
 GAS_INCREASE=
 ```
+
 - GAS_INCREASE arg is in GWEI,if you want to add 1 gwei to the rapid gas price set GAS_INCREASE in .env file to 1.Do not enter wei amounts for GAS_INCREASE
 - If you want to use an existing wallet set your MNEMONIC in the .env
 - Get an Infura Project Id from [Infura](https://infura.io/dashboard) and set it to INFURA_PROJECT_ID key
