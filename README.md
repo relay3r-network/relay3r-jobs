@@ -10,7 +10,6 @@ This repo contains everything you need to run be a Relayer.
 - RelayerV1Oracle
 
 ### [Keep3r](https://keep3r.network/)
-
 - CrvStrategyKeep3r
 - DForceStrategyKeep3r
 - HegicPoolKeeper
@@ -20,8 +19,9 @@ This repo contains everything you need to run be a Relayer.
 - MMStrategyKeeperV1
 - SushiswapV1Oracle
 - LidoKeep3r
+- YearnLiquidationKeep3r
 
-# Jobs minkeep requirements : 
+# Jobs minkeep requirements :
 - Keep3rV1Oracle - 200 KP3R
 - SushiswapV1Oracle - 200 KP3R
 - RelayerV1Oracle - 250 RLR

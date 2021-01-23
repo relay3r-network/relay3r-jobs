@@ -20,6 +20,7 @@ const { MMStrategyKeeperV1Job } = require("./jobs/keeper/MMStrategyKeeperV1Job")
 const { YearnGenericKeep3rV2Job } = require("./jobs/keeper/YearnGenericKeep3rV2Job");
 const { SushiswapV1OracleJob } = require("./jobs/keeper/SushiswapV1OracleJob");
 const { LidoKeep3rJob } = require("./jobs/keeper/LidoKeep3rJob");
+const { YearnLiquidationKeep3rJob } = require("./jobs/keeper/YearnLiquidationKeep3rJob");
 
 const { Logger } = require("./helper/logger");
 
@@ -54,7 +55,8 @@ class JobHandler {
       this.createJob(MMStrategyKeeperV1Job),
       this.createJob(YearnGenericKeep3rV2Job),
       this.createJob(SushiswapV1OracleJob),
-      this.createJob(LidoKeep3rJob)
+      this.createJob(LidoKeep3rJob),
+      this.createJob(YearnLiquidationKeep3rJob)
     );
   }
 
