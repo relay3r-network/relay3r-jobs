@@ -32,14 +32,9 @@ class JobHandler {
   registerAvailableJobs() {
     this.availableJobs.push(
       //Relayer jobs
-      /* Inactive Relayer jobs
-      this.createJob(CoreFlashArbRelayerJob),
-      this.createJob(BACFarmerRelayerJob),
-      this.createJob(SynlRebalancerJob),
-      */
       this.createJob(UnitradeRelayerJob),
       this.createJob(GetBackETHRelayerJob),
-      this.createJob(RelayerV1OracleJob),
+      // this.createJob(RelayerV1OracleJob),
       //Keeper jobs
       this.createJob(HegicPoolKeeperJob),
       this.createJob(YearnV1EarnKeeperJob),
@@ -87,7 +82,7 @@ class JobHandler {
     const callNeededToRunAllJobsOnce = 2 * this.runningJobs.length;
     const numberOfRuns = this.maxProviderCall / callNeededToRunAllJobsOnce;
     const newTimeout = msInADay / numberOfRuns;
-    this.runningJobs.forEach((job) => (job.timeout = newTimeout));
+    this.runningJobs.forEach(job => {job.timeout = newTimeout});
   }
 
   isStarted(jobName) {
