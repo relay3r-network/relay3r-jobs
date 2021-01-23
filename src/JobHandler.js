@@ -1,11 +1,5 @@
 const { JobExecutor } = require("./jobs/JobExecutor");
 // Relayer jobs
-/*
-Inactive Relayer Jobs
-const { CoreFlashArbRelayerJob } = require("./jobs/relayer/CoreFlashArbRelayerJob");
-const { BACFarmerRelayerJob } = require("./jobs/relayer/BACFarmerRelayerJob");
-const { SynlRebalancerJob } = require("./jobs/relayer/SynlRebalancerJob");
-*/
 const { UnitradeRelayerJob } = require("./jobs/relayer/UnitradeRelayerJob");
 const { GetBackETHRelayerJob } = require("./jobs/relayer/GetBackETHRelayerJob");
 const { RelayerV1OracleJob } = require("./jobs/relayer/RelayerV1OracleJob");
