@@ -8,6 +8,7 @@ This repo contains everything you need to run be a Relayer.
 
 - GetBackETHRelayer
 - UnitradeRelayer
+- NISTRelayer
 <!-- - RelayerV1Oracle -->
 
 ### [Keep3r](https://keep3r.network/)
@@ -24,12 +25,16 @@ This repo contains everything you need to run be a Relayer.
 - YearnLiquidationKeep3r
 - VaultKeep3r
 
-# Jobs minkeep requirements :
+## Minimum Bonds:
+| Job                 | Min Bond    |
+| ------------------- | ----------- |
+| Keep3rV1Oracle      | 200 KP3R    |
+| SushiswapV1Oracle   | 200 KP3R    |
+| UnitradeRelayer     | 200 RLR     |
+| NISTRelayerJob      | 500 RLR     |
 
-- Keep3rV1Oracle - 200 KP3R
-- SushiswapV1Oracle - 200 KP3R
-<!-- - RelayerV1Oracle - 250 RLR -->
-- UnitradeRelayer - 250 RLR
+<br>
+
 
 ## Getting started
 
@@ -47,7 +52,7 @@ Default .env:
 ```
 MNEMONIC=
 INFURA_PROJECT_ID=
-JOBS=RelayerV1Oracle,UnitradeRelayer
+JOBS=NISTRelayerJob,UnitradeRelayer
 GAS_INCREASE=
 ```
 
