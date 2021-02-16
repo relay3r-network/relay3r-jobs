@@ -49,10 +49,12 @@ class UnitradeRelayerJob extends Job {
       if (this.orderList.length > 1)
         return await this.contract.workBatch(this.orderList, {
           gasPrice: gas,
+          gasLimit: 12000000
         });
       else
         return await this.contract.workSolo(this.orderList[0], {
           gasPrice: gas,
+          gasLimit: 12000000
         });
     }
   }
